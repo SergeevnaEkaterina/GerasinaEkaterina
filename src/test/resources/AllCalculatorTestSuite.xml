@@ -11,7 +11,7 @@
             <package name="com.epam.tc.hw1.compound"/>
         </packages>
     </test>
-    <test name="Signed">
+    <test name="Sign">
         <packages>
             <package name="com.epam.tc.hw1.sign"/>
         </packages>
