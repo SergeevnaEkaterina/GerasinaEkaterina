@@ -110,7 +110,7 @@
                 <configuration>
                     <suiteXmlFiles>
 
-                        <suiteXmlFile>${project.basedir}/src/test/resources/AddSubtractTestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>${project.basedir}/src/test/resources/AllCalculatorTestSuite.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
