@@ -3,15 +3,15 @@ C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\basics\Calc
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\compound\PowerDataProvider.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\basics\CalculatorSumTest.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\basics\MultiplyDataProvider.java
-C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\trigonometry\CalculatorCosTest.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\trigonometry\CalculatorSinTest.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\compound\CalculatorSqrtTest.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\CalculatorBaseTest.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\compound\CalculatorPowTest.java
-C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\trigonometry\CosDataProvider.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\basics\CalculatorSubtractTest.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\trigonometry\SinDataProvider.java
+C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\sign\SignDataProvider.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\basics\SumDataProvider.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\basics\SubtractDataProvider.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\basics\DivideDataProvider.java
 C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\basics\CalculatorMultiplyTest.java
+C:\Users\220\IdeaProjects\EpamTestAuro\src\test\java\com\epam\tc\hw1\sign\CalculatorPlusSignTest.java
