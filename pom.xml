@@ -47,6 +47,33 @@
                 </suite.xml.name>
             </properties>
         </profile>
+        <profile>
+            <id>all-jdi-site-test-suite</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw2/AllTestsJdiTesting.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>start-page-test</id>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw2/StartPageTest.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>inner-page-test-suite</id>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw2/InnerPageTest.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -68,6 +95,16 @@
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/calculator-1.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.0.2</version>
         </dependency>
     </dependencies>
 
