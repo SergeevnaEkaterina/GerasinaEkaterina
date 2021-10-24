@@ -13,8 +13,9 @@ public class StartPageTest extends SiteBaseTest {
     public void startPageJdiTest() {
         // 1. Open test site by URL
         webDriver.navigate().to(URL);
-        softAssert.assertEquals(webDriver.getCurrentUrl(), "https://jdi-testing.github.io/jdi-light/index.html");
+        softAssert.assertEquals(webDriver.getCurrentUrl(), URL);
         final String pageID = webDriver.getWindowHandle();
+
         // 2. Assert Browser title
         softAssert.assertEquals(webDriver.getTitle(), "Home Page");
         webDriver.findElement(By.id("user-icon")).click();
