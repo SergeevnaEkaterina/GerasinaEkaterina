@@ -39,7 +39,6 @@ public class StartPageTest extends SiteBaseTest {
         softAssert.assertEquals(webDriver.findElements(LocatorsIndexPage.IMAGES).size(), 4);
         List<String> description = new ArrayList<>();
         for (WebElement element : webDriver.findElements(LocatorsIndexPage.DESCRIPTION)) {
-            softAssert.assertTrue(element.isDisplayed());
             description.add(element.getText());
         }
         // 7. Assert that there are 4 texts on the Index Page under icons and they have proper text
@@ -57,7 +56,6 @@ public class StartPageTest extends SiteBaseTest {
         // 11. Assert that there are 5 items in the Left Section are displayed and they have proper text
         List<String> leftSideBar = new ArrayList<>();
         for (WebElement element : webDriver.findElements(LocatorsIndexPage.LEFT_SIDE_BAR)) {
-            softAssert.assertTrue(element.isDisplayed());
             leftSideBar.add(element.getText());
         }
         softAssert.assertEquals(leftSideBar, Values.LEFT_SIDE_BAR);
