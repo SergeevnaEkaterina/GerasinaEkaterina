@@ -2,6 +2,7 @@ package com.epam.tc.hw2;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import com.epam.tc.hw2.data.PropertyInitialization;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.NoSuchSessionException;
@@ -11,15 +12,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class SiteBaseTest {
-    WebDriver webDriver;
-
+    protected WebDriver webDriver;
     public static final String URL = PropertyInitialization.getPropertyByName("url");
     public static final String LOGIN = PropertyInitialization.getPropertyByName("login");
     public static final String PASSWORD = PropertyInitialization.getPropertyByName("password");
     public static final String USERNAME = PropertyInitialization.getPropertyByName("userName");
-
-    public SiteBaseTest() {
-    }
 
     @BeforeMethod
     public void setUp() {
@@ -35,8 +32,6 @@ public class SiteBaseTest {
     public void tearDown() {
         System.out.println("after method");
         webDriver.quit();
-        assertThatThrownBy(() -> {
-            webDriver.getTitle();
-        }).isInstanceOf(NoSuchSessionException.class);
+        assertThatThrownBy(webDriver::getTitle).isInstanceOf(NoSuchSessionException.class);
     }
 }

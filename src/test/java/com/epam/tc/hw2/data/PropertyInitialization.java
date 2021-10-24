@@ -1,13 +1,10 @@
-package com.epam.tc.hw2;
+package com.epam.tc.hw2.data;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyInitialization {
-
-    public PropertyInitialization() {
-    }
 
     public static String getPropertyByName(String name) {
         FileInputStream fis;
