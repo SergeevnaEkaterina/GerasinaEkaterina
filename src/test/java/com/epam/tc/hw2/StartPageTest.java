@@ -17,7 +17,7 @@ public class StartPageTest extends SiteBaseTest {
         final String pageID = webDriver.getWindowHandle();
         // 2. Assert Browser title
         softAssert.assertEquals(webDriver.getTitle(), "Home Page");
-        webDriver.findElements(By.className("dropdown-toggle")).get(1).click();
+        webDriver.findElement(By.id("user-icon")).click();
         WebElement username = webDriver.findElement(By.id("name"));
         WebElement password = webDriver.findElement(By.id("password"));
         // 3. Perform login
