@@ -2,7 +2,8 @@ package com.epam.tc.hw3.exercise1;
 
 import com.epam.tc.hw3.SiteBaseTest;
 import com.epam.tc.hw3.data.Values;
-import org.openqa.selenium.support.PageFactory;
+import com.epam.tc.hw3.pages.IndexPage;
+import com.epam.tc.hw3.pages.LoginPage;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -11,17 +12,18 @@ public class StartPageTest extends SiteBaseTest {
 
     @Test
     public void startPageJdiTest() {
-        IndexPage indexPage = PageFactory.initElements(webDriver, IndexPage.class);
-        indexPage.open(URL);
+        LoginPage loginPage = new LoginPage(webDriver);
+        loginPage.open(URL);
         softAssert.assertEquals(webDriver.getCurrentUrl(), URL);
-        indexPage.setPageID(webDriver.getWindowHandle());
+        pageID = webDriver.getWindowHandle();
         // 2. Assert Browser title
-        softAssert.assertEquals(indexPage.getSiteTitle(), Values.TITLE);
+        softAssert.assertEquals(loginPage.getSiteTitle(), Values.TITLE);
         // 3. Perform login
-        indexPage.login(LOGIN, PASSWORD);
+        loginPage.login(LOGIN, PASSWORD);
         // 4. Assert Username is loggined
-        softAssert.assertTrue(indexPage.getUserName().isDisplayed());
-        softAssert.assertEquals(indexPage.getUserNameText(), USERNAME);
+        softAssert.assertTrue(loginPage.getUserName().isDisplayed());
+        softAssert.assertEquals(loginPage.getUserNameText(), USERNAME);
+        IndexPage indexPage = new IndexPage(webDriver);
         // 5. Assert there are 4 items on the header section are displayed with proper texts
         softAssert.assertTrue(indexPage.getHeaderSection().isDisplayed());
         softAssert.assertEquals(indexPage.getHeaderSectionText(),
@@ -38,7 +40,7 @@ public class StartPageTest extends SiteBaseTest {
         softAssert.assertEquals(indexPage.getValueOfFrameButton(), Values.FRAME_BUTTON);
         // 10. Switch to original window back
         indexPage.switchOn(false);
-        softAssert.assertEquals(webDriver.getWindowHandle(), indexPage.getPageID());
+        softAssert.assertEquals(webDriver.getWindowHandle(), pageID);
         // 11. Assert that there are 5 items in the Left Section are displayed and they have proper text
         softAssert.assertEquals(indexPage.getDescription(indexPage.getLeftSideBar()), Values.LEFT_SIDE_BAR);
         // 12. Close Browser in after method

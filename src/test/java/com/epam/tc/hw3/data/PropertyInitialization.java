@@ -11,7 +11,7 @@ public class PropertyInitialization {
         String prop = null;
         Properties property = new Properties();
         try {
-            fis = new FileInputStream("src/test/resources/hw2/configuration.properties");
+            fis = new FileInputStream("src/test/resources/hw3/configuration.properties");
             property.load(fis);
             prop = property.getProperty(name);
         } catch (IOException e) {

@@ -1,62 +1,38 @@
-package com.epam.tc.hw3.exercise1;
+package com.epam.tc.hw3.pages;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.epam.tc.hw3.data.LocatorsIndexPage;
 import lombok.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 @Data
 public class IndexPage {
     public WebDriver webDriver;
-    private String pageID;
-    @FindBy(id = "user-icon")
-    private WebElement userIcon;
-    @FindBy(id = "name")
-    private WebElement userLogin;
-    @FindBy(id = "password")
-    private WebElement userPassword;
-    @FindBy(id = "login-button")
-    private WebElement loginButton;
-    @FindBy(id = "user-name")
-    private WebElement userName;
     @CacheLookup
-    @FindBy(className = "uui-navigation")
+    @FindBy(className = LocatorsIndexPage.HEADER_SECTION)
     private WebElement headerSection;
     @CacheLookup
-    @FindBy(css = "div.row .col-sm-3")
+    @FindBy(css = LocatorsIndexPage.IMAGES)
     private List<WebElement> images;
-    @FindBy(id = "frame")
+    @FindBy(id = LocatorsIndexPage.FRAME)
     private WebElement iframe;
-    @FindBy(id = "frame-button")
+    @FindBy(id = LocatorsIndexPage.FRAME_BUTTON)
     private WebElement frameButton;
     @CacheLookup
-    @FindBy(css = "#mCSB_1_container > ul >li> a>span")
+    @FindBy(css = LocatorsIndexPage.LEFT_SIDE_BAR)
     private List<WebElement> leftSideBar;
 
     public IndexPage(WebDriver webDriver) {
+        PageFactory.initElements(webDriver, this);
         this.webDriver = webDriver;
     }
 
-    public void open(String url) {
-        webDriver.navigate().to(url);
-    }
-
-    public String getSiteTitle() {
-        return webDriver.getTitle();
-    }
-
-    public void login(String login, String password) {
-        userIcon.click();
-        userLogin.sendKeys(login);
-        userPassword.sendKeys(password);
-        loginButton.click();
-    }
-    public String getUserNameText() {
-        return userName.getText();
-    }
 
     public String getHeaderSectionText() {
         return headerSection.getText();
@@ -67,7 +43,7 @@ public class IndexPage {
     }
 
     public String getValueOfFrameButton() {
-        return frameButton.getAttribute("value");
+        return frameButton.getAttribute(LocatorsIndexPage.ATTRIBUTE);
     }
 
     public List<String> getDescription(List<WebElement> webElements) {

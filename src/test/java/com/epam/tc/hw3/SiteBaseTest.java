@@ -17,7 +17,7 @@ public class SiteBaseTest {
     public static final String LOGIN = PropertyInitialization.getPropertyByName("login");
     public static final String PASSWORD = PropertyInitialization.getPropertyByName("password");
     public static final String USERNAME = PropertyInitialization.getPropertyByName("userName");
-
+    protected String pageID;
     @BeforeMethod
     public void setUp() {
         System.out.println("before method");
