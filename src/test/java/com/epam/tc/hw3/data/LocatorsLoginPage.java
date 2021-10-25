@@ -1,7 +1,5 @@
 package com.epam.tc.hw3.data;
 
-import org.openqa.selenium.By;
-
 public class LocatorsLoginPage {
     public static final String USER_ICON = "user-icon";
     public static final String NAME = "name";

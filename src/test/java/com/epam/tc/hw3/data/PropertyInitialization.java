@@ -8,15 +8,15 @@ public class PropertyInitialization {
 
     public static String getPropertyByName(String name) {
         FileInputStream fis;
-        String prop = null;
+        String properties = null;
         Properties property = new Properties();
         try {
-            fis = new FileInputStream("src/test/resources/hw3/configuration.properties");
+            fis = new FileInputStream("src/test/resources/hw2/configuration.properties");
             property.load(fis);
-            prop = property.getProperty(name);
+            properties = property.getProperty(name);
         } catch (IOException e) {
             System.err.println("ОШИБКА: Файл свойств отсуствует!");
         }
-        return prop;
+        return properties;
     }
 }

@@ -8,9 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 @Data
-public class LoginPage {
-    public WebDriver webDriver;
-    private String title;
+public class LoginPage extends AbstractPage {
     @FindBy(id = LocatorsLoginPage.USER_ICON)
     private WebElement userIcon;
     @FindBy(id = LocatorsLoginPage.NAME)
@@ -27,8 +25,8 @@ public class LoginPage {
     private WebElement differentElements;
 
     public LoginPage(WebDriver webDriver) {
+        super(webDriver);
         PageFactory.initElements(webDriver, this);
-        this.webDriver = webDriver;
     }
 
     public void open(String url) {
@@ -41,6 +39,7 @@ public class LoginPage {
         userPassword.sendKeys(password);
         loginButton.click();
     }
+
     public void openDifferentElements() {
         serviceMenu.click();
         differentElements.click();

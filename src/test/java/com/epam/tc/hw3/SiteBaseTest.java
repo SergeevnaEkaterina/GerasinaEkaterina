@@ -14,10 +14,8 @@ import org.testng.annotations.BeforeMethod;
 public class SiteBaseTest {
     protected WebDriver webDriver;
     public static final String URL = PropertyInitialization.getPropertyByName("url");
-    public static final String LOGIN = PropertyInitialization.getPropertyByName("login");
-    public static final String PASSWORD = PropertyInitialization.getPropertyByName("password");
-    public static final String USERNAME = PropertyInitialization.getPropertyByName("userName");
     protected String pageID;
+
     @BeforeMethod
     public void setUp() {
         System.out.println("before method");
