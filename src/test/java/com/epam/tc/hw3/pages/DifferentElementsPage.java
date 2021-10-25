@@ -1,27 +1,27 @@
 package com.epam.tc.hw3.pages;
 
-import com.epam.tc.hw3.data.LocatorsDifferentElementsPage;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+@EqualsAndHashCode(callSuper = false)
 @Data
 public class DifferentElementsPage extends AbstractPage {
     private List<String> logsText = new ArrayList<>();
-
-    @FindBy(css = LocatorsDifferentElementsPage.CHECKBOXES)
+    @FindBy(css = ".label-checkbox > input")
     private List<WebElement> checkBoxes;
-    @FindBy(css = LocatorsDifferentElementsPage.RADIO)
+    @FindBy(css = ".checkbox-row .label-radio")
     private List<WebElement> radio;
-    @FindBy(css = LocatorsDifferentElementsPage.DROPDOWN_LIST)
+    @FindBy(css = ".uui-form-element")
     private List<WebElement> dropdownList;
-    @FindBy(css = LocatorsDifferentElementsPage.DROPDOWN_ELEMENT)
+    @FindBy(css = ".uui-form-element > option")
     private List<WebElement> dropdownElement;
-    @FindBy(css = LocatorsDifferentElementsPage.LOGS)
+    @FindBy(css = ".info-panel-body-log .panel-body-list > li")
     private List<WebElement> logs;
 
     public DifferentElementsPage(WebDriver webDriver) {

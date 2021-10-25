@@ -1,27 +1,28 @@
 package com.epam.tc.hw3.pages;
 
-import com.epam.tc.hw3.data.LocatorsLoginPage;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+@EqualsAndHashCode(callSuper = false)
 @Data
 public class LoginPage extends AbstractPage {
-    @FindBy(id = LocatorsLoginPage.USER_ICON)
+    @FindBy(id = "user-icon")
     private WebElement userIcon;
-    @FindBy(id = LocatorsLoginPage.NAME)
+    @FindBy(id = "name")
     private WebElement userLogin;
-    @FindBy(id = LocatorsLoginPage.PASSWORD)
+    @FindBy(id = "password")
     private WebElement userPassword;
-    @FindBy(id = LocatorsLoginPage.LOGIN_BUTTON)
+    @FindBy(id = "login-button")
     private WebElement loginButton;
-    @FindBy(id = LocatorsLoginPage.USERNAME)
+    @FindBy(id = "user-name")
     private WebElement userName;
-    @FindBy(linkText = LocatorsLoginPage.SERVICE_MENU)
+    @FindBy(linkText = "SERVICE")
     private WebElement serviceMenu;
-    @FindBy(linkText = LocatorsLoginPage.DIFFERENT_ELEMENTS)
+    @FindBy(linkText = "DIFFERENT ELEMENTS")
     private WebElement differentElements;
 
     public LoginPage(WebDriver webDriver) {

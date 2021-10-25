@@ -1,26 +1,27 @@
 package com.epam.tc.hw3.pages;
 
-import com.epam.tc.hw3.data.LocatorsIndexPage;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+@EqualsAndHashCode(callSuper = false)
 @Data
 public class IndexPage extends AbstractPage {
     private Iframe iframe;
     @CacheLookup
-    @FindBy(className = LocatorsIndexPage.HEADER_SECTION)
+    @FindBy(className = "uui-navigation")
     private WebElement headerSection;
     @CacheLookup
-    @FindBy(css = LocatorsIndexPage.IMAGES)
+    @FindBy(css = "div.row .col-sm-3")
     private List<WebElement> images;
     @CacheLookup
-    @FindBy(css = LocatorsIndexPage.LEFT_SIDE_BAR)
+    @FindBy(css = "#mCSB_1_container > ul > li > a > span")
     private List<WebElement> leftSideBar;
 
     public IndexPage(WebDriver webDriver) {
