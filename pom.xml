@@ -46,9 +46,6 @@
         </profile>
         <profile>
             <id>all-jdi-site-test-suite</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <suite.xml.name>
                     ${project.basedir}/src/test/resources/hw2/AllTestsJdiTesting.xml
@@ -68,6 +65,33 @@
             <properties>
                 <suite.xml.name>
                     ${project.basedir}/src/test/resources/hw2/InnerPageTest.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>all-page-object-jdi-tests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw3/AllTestsJdiTesting.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>start-page-object-jdi-test</id>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw3/StartPageTest.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>inner-page-object-jdi-test-suite</id>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw3/InnerPageTest.xml
                 </suite.xml.name>
             </properties>
         </profile>
