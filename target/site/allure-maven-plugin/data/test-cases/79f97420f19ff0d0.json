@@ -1,0 +1,272 @@
+{
+  "uid" : "79f97420f19ff0d0",
+  "name" : "innerPageDifferentElementsTest",
+  "fullName" : "com.epam.tc.hw4.exercise2.PageDifferentElementsTest.innerPageDifferentElementsTest",
+  "historyId" : "1c5c159a12cb225e78d6dd5e23c38519",
+  "time" : {
+    "start" : 1635357675639,
+    "stop" : 1635357680301,
+    "duration" : 4662
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1635357673302,
+      "stop" : 1635357675629,
+      "duration" : 2327
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open login page",
+      "time" : {
+        "start" : 1635357675639,
+        "stop" : 1635357677098,
+        "duration" : 1459
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "url",
+        "value" : "https://jdi-testing.github.io/jdi-light/index.html"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "text Roman : Jdi1234",
+      "time" : {
+        "start" : 1635357677160,
+        "stop" : 1635357677847,
+        "duration" : 687
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "login",
+        "value" : "Roman"
+      }, {
+        "name" : "password",
+        "value" : "Jdi1234"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "User",
+      "time" : {
+        "start" : 1635357677967,
+        "stop" : 1635357678028,
+        "duration" : 61
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Open different elements page",
+      "time" : {
+        "start" : 1635357678029,
+        "stop" : 1635357679114,
+        "duration" : 1085
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Select checkboxes with indexes 0",
+      "time" : {
+        "start" : 1635357679148,
+        "stop" : 1635357679306,
+        "duration" : 158
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "index",
+        "value" : "0"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Select checkboxes with indexes 2",
+      "time" : {
+        "start" : 1635357679306,
+        "stop" : 1635357679420,
+        "duration" : 114
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "index",
+        "value" : "2"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Select radio with index 3",
+      "time" : {
+        "start" : 1635357679506,
+        "stop" : 1635357679632,
+        "duration" : 126
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "index",
+        "value" : "3"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Select dropdown with index {index}",
+      "time" : {
+        "start" : 1635357679685,
+        "stop" : 1635357680013,
+        "duration" : 328
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "outerIndex",
+        "value" : "2"
+      }, {
+        "name" : "innerIndex",
+        "value" : "3"
+      } ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Get logs text",
+      "time" : {
+        "start" : 1635357680050,
+        "stop" : 1635357680254,
+        "duration" : 204
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 9,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1635357680307,
+      "stop" : 1635357681521,
+      "duration" : 1214
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.epam.tc.hw4.exercise2.PageDifferentElementsTest"
+  }, {
+    "name" : "testClass",
+    "value" : "com.epam.tc.hw4.exercise2.PageDifferentElementsTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "innerPageDifferentElementsTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Login Credentials Test Suite with Page Object Allure"
+  }, {
+    "name" : "suite",
+    "value" : "Inner Page Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.epam.tc.hw4.exercise2.PageDifferentElementsTest"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-5OB1FN0K"
+  }, {
+    "name" : "thread",
+    "value" : "18896@LAPTOP-5OB1FN0K.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "Roman"
+  }, {
+    "name" : "arg1",
+    "value" : "Jdi1234"
+  }, {
+    "name" : "arg2",
+    "value" : "ROMAN IOVLEV"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "79f97420f19ff0d0.json",
+  "parameterValues" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+}

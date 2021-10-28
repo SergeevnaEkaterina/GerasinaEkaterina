@@ -1,0 +1,21 @@
+[ {
+  "uid" : "9717dcd04816e5a1",
+  "name" : "startPageJdiTest",
+  "time" : {
+    "start" : 1635357665748,
+    "stop" : 1635357671311,
+    "duration" : 5563
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "79f97420f19ff0d0",
+  "name" : "innerPageDifferentElementsTest",
+  "time" : {
+    "start" : 1635357675639,
+    "stop" : 1635357680301,
+    "duration" : 4662
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

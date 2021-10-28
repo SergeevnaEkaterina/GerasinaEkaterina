@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Oct 27 21:01:05 MSK 2021","Wed Oct 27 21:01:11 MSK 2021","5563","Login Credentials Test Suite with Page Object Allure","Start page Test","com.epam.tc.hw4.exercise1.StartPageTest","com.epam.tc.hw4.exercise1.StartPageTest","startPageJdiTest","startPageJdiTest",""
+"passed","Wed Oct 27 21:01:15 MSK 2021","Wed Oct 27 21:01:20 MSK 2021","4662","Login Credentials Test Suite with Page Object Allure","Inner Page Test","com.epam.tc.hw4.exercise2.PageDifferentElementsTest","com.epam.tc.hw4.exercise2.PageDifferentElementsTest","innerPageDifferentElementsTest","innerPageDifferentElementsTest",""

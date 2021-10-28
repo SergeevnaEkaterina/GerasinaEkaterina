@@ -1,0 +1,43 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "com.epam.tc.hw4",
+    "children" : [ {
+      "name" : "exercise1.StartPageTest",
+      "children" : [ {
+        "name" : "startPageJdiTest",
+        "uid" : "9717dcd04816e5a1",
+        "parentUid" : "beb664b11ecd0e69525a97684929a52d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1635357665748,
+          "stop" : 1635357671311,
+          "duration" : 5563
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      } ],
+      "uid" : "exercise1.StartPageTest"
+    }, {
+      "name" : "exercise2.PageDifferentElementsTest",
+      "children" : [ {
+        "name" : "innerPageDifferentElementsTest",
+        "uid" : "79f97420f19ff0d0",
+        "parentUid" : "e40dfc9b973abb6a6be54582ee803f1a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1635357675639,
+          "stop" : 1635357680301,
+          "duration" : 4662
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      } ],
+      "uid" : "exercise2.PageDifferentElementsTest"
+    } ],
+    "uid" : "com.epam.tc.hw4"
+  } ]
+}

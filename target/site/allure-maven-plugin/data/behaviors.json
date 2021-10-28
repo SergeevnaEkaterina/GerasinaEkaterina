@@ -1,0 +1,31 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "startPageJdiTest",
+    "uid" : "9717dcd04816e5a1",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1635357665748,
+      "stop" : 1635357671311,
+      "duration" : 5563
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+  }, {
+    "name" : "innerPageDifferentElementsTest",
+    "uid" : "79f97420f19ff0d0",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1635357675639,
+      "stop" : 1635357680301,
+      "duration" : 4662
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+  } ]
+}

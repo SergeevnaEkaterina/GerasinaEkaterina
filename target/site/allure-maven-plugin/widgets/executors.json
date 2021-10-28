@@ -1,0 +1,5 @@
+[ {
+  "name" : "Maven",
+  "type" : "maven",
+  "buildName" : "epam-test-auto-autumn-oct-2021"
+} ]

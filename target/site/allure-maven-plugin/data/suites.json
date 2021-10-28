@@ -1,0 +1,51 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Login Credentials Test Suite with Page Object Allure",
+    "children" : [ {
+      "name" : "Start page Test",
+      "children" : [ {
+        "name" : "com.epam.tc.hw4.exercise1.StartPageTest",
+        "children" : [ {
+          "name" : "startPageJdiTest",
+          "uid" : "9717dcd04816e5a1",
+          "parentUid" : "ebe0eea54ad7be82d3eacf5063bf0a70",
+          "status" : "passed",
+          "time" : {
+            "start" : 1635357665748,
+            "stop" : 1635357671311,
+            "duration" : 5563
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+        } ],
+        "uid" : "ebe0eea54ad7be82d3eacf5063bf0a70"
+      } ],
+      "uid" : "741e5ecd8f2a4a921e49b609b48143ad"
+    }, {
+      "name" : "Inner Page Test",
+      "children" : [ {
+        "name" : "com.epam.tc.hw4.exercise2.PageDifferentElementsTest",
+        "children" : [ {
+          "name" : "innerPageDifferentElementsTest",
+          "uid" : "79f97420f19ff0d0",
+          "parentUid" : "87b536236fb6f3fca4df81113d64ca92",
+          "status" : "passed",
+          "time" : {
+            "start" : 1635357675639,
+            "stop" : 1635357680301,
+            "duration" : 4662
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+        } ],
+        "uid" : "87b536236fb6f3fca4df81113d64ca92"
+      } ],
+      "uid" : "9a363acdb0c86a4cf619853c2583a303"
+    } ],
+    "uid" : "2bb4b1b1d3d8a49b2ebbc8e4a6368342"
+  } ]
+}

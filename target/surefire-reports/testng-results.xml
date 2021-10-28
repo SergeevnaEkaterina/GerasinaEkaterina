@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-10-27T21:00:57 MSK" name="Login Credentials Test Suite with Page Object Allure" finished-at="2021-10-27T21:01:21 MSK" duration-ms="24190">
+    <groups>
+    </groups>
+    <test started-at="2021-10-27T21:00:57 MSK" name="Start page Test" finished-at="2021-10-27T21:01:13 MSK" duration-ms="15920">
+      <class name="com.epam.tc.hw4.exercise1.StartPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.epam.tc.hw4.exercise1.StartPageTest@7435a578]" started-at="2021-10-27T21:00:57 MSK" name="setUp" finished-at="2021-10-27T21:01:05 MSK" duration-ms="7571" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="startPageJdiTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.epam.tc.hw4.exercise1.StartPageTest@7435a578]" started-at="2021-10-27T21:01:05 MSK" name="startPageJdiTest" data-provider="userRomanData" finished-at="2021-10-27T21:01:11 MSK" duration-ms="5694" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Roman]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Jdi1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ROMAN IOVLEV]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startPageJdiTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.epam.tc.hw4.exercise1.StartPageTest@7435a578]" started-at="2021-10-27T21:01:11 MSK" name="tearDown" finished-at="2021-10-27T21:01:13 MSK" duration-ms="1914" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.epam.tc.hw4.exercise1.StartPageTest -->
+    </test> <!-- Start page Test -->
+    <test started-at="2021-10-27T21:01:13 MSK" name="Inner Page Test" finished-at="2021-10-27T21:01:21 MSK" duration-ms="8221">
+      <class name="com.epam.tc.hw4.exercise2.PageDifferentElementsTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.epam.tc.hw4.exercise2.PageDifferentElementsTest@70242f38]" started-at="2021-10-27T21:01:13 MSK" name="setUp" finished-at="2021-10-27T21:01:15 MSK" duration-ms="2327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="innerPageDifferentElementsTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.epam.tc.hw4.exercise2.PageDifferentElementsTest@70242f38]" started-at="2021-10-27T21:01:15 MSK" name="innerPageDifferentElementsTest" data-provider="userRomanData" finished-at="2021-10-27T21:01:20 MSK" duration-ms="4672" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Roman]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Jdi1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ROMAN IOVLEV]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- innerPageDifferentElementsTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.epam.tc.hw4.exercise2.PageDifferentElementsTest@70242f38]" started-at="2021-10-27T21:01:20 MSK" name="tearDown" finished-at="2021-10-27T21:01:21 MSK" duration-ms="1214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.epam.tc.hw4.exercise2.PageDifferentElementsTest -->
+    </test> <!-- Inner Page Test -->
+  </suite> <!-- Login Credentials Test Suite with Page Object Allure -->
+</testng-results>
