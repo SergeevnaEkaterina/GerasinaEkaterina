@@ -43,7 +43,6 @@ public class StartPageBrokenTest extends SiteBaseTest {
         softAssert.assertTrue(indexPage.getIframe().getIframe().isDisplayed());
         // 9. Switch to the iframe and check that there is “Frame Button” in the iframe
         indexPage.getIframe().switchOn(true);
-        //  webDriver.switchTo().frame(indexPage.getIframe());
         softAssert.assertEquals(indexPage.getIframe().getValueOfFrameButton(), Values.FRAME_BUTTON);
         // 10. Switch to original window back
         indexPage.getIframe().switchOn(false);
