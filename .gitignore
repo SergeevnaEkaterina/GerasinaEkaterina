@@ -6,3 +6,5 @@ log/
 *.iml
 .idea/
 out/
+.allure
+allure-results
