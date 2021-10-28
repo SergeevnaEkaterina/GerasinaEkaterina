@@ -1,4 +1,4 @@
-package com.epam.tc.hw4.exercise1;
+package com.epam.tc.hw4.start;
 
 import com.epam.tc.hw4.SiteBaseTest;
 import com.epam.tc.hw4.data.LoginDataProvider;

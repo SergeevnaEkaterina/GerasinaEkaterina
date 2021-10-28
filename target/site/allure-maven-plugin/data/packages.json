@@ -4,39 +4,56 @@
   "children" : [ {
     "name" : "com.epam.tc.hw4",
     "children" : [ {
-      "name" : "exercise1.StartPageTest",
+      "name" : "start.StartPageTest",
       "children" : [ {
         "name" : "startPageJdiTest",
-        "uid" : "9717dcd04816e5a1",
-        "parentUid" : "beb664b11ecd0e69525a97684929a52d",
+        "uid" : "3a1443f63c544d91",
+        "parentUid" : "d642f3737859cbe13425f5960e0575dc",
         "status" : "passed",
         "time" : {
-          "start" : 1635357665748,
-          "stop" : 1635357671311,
-          "duration" : 5563
+          "start" : 1635443309630,
+          "stop" : 1635443319945,
+          "duration" : 10315
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
       } ],
-      "uid" : "exercise1.StartPageTest"
+      "uid" : "start.StartPageTest"
     }, {
-      "name" : "exercise2.PageDifferentElementsTest",
+      "name" : "inner.PageDifferentElementsTest",
       "children" : [ {
         "name" : "innerPageDifferentElementsTest",
-        "uid" : "79f97420f19ff0d0",
-        "parentUid" : "e40dfc9b973abb6a6be54582ee803f1a",
+        "uid" : "81cc7de324a322ef",
+        "parentUid" : "98779d329681a5e6423a98c54e0d50a9",
         "status" : "passed",
         "time" : {
-          "start" : 1635357675639,
-          "stop" : 1635357680301,
-          "duration" : 4662
+          "start" : 1635443326238,
+          "stop" : 1635443331400,
+          "duration" : 5162
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
       } ],
-      "uid" : "exercise2.PageDifferentElementsTest"
+      "uid" : "inner.PageDifferentElementsTest"
+    }, {
+      "name" : "broken.StartPageBrokenTest",
+      "children" : [ {
+        "name" : "startPageJdiTest",
+        "uid" : "78522f159e94f66",
+        "parentUid" : "c71273a8fe5921a7f11f877df5e0ecc8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1635443336018,
+          "stop" : 1635443339936,
+          "duration" : 3918
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      } ],
+      "uid" : "broken.StartPageBrokenTest"
     } ],
     "uid" : "com.epam.tc.hw4"
   } ]

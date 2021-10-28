@@ -4,35 +4,168 @@
   "children" : [ {
     "name" : "LAPTOP-5OB1FN0K",
     "children" : [ {
-      "name" : "18896@LAPTOP-5OB1FN0K.main(1)",
+      "name" : "24964@LAPTOP-5OB1FN0K.main(1)",
       "children" : [ {
         "name" : "startPageJdiTest",
-        "uid" : "9717dcd04816e5a1",
-        "parentUid" : "069f9cef56dba31be7714643c0d35fa6",
-        "status" : "passed",
+        "uid" : "8861ba04e917a1a0",
+        "parentUid" : "6bb280b4ea5873a0fe9a845886905589",
+        "status" : "failed",
         "time" : {
-          "start" : 1635357665748,
-          "stop" : 1635357671311,
-          "duration" : 5563
+          "start" : 1635442139532,
+          "stop" : 1635442144675,
+          "duration" : 5143
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
       }, {
         "name" : "innerPageDifferentElementsTest",
-        "uid" : "79f97420f19ff0d0",
-        "parentUid" : "069f9cef56dba31be7714643c0d35fa6",
+        "uid" : "80ae09877604cf02",
+        "parentUid" : "6bb280b4ea5873a0fe9a845886905589",
         "status" : "passed",
         "time" : {
-          "start" : 1635357675639,
-          "stop" : 1635357680301,
-          "duration" : 4662
+          "start" : 1635442131846,
+          "stop" : 1635442135875,
+          "duration" : 4029
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      }, {
+        "name" : "startPageJdiTest",
+        "uid" : "57e1031e7b714d2f",
+        "parentUid" : "6bb280b4ea5873a0fe9a845886905589",
+        "status" : "passed",
+        "time" : {
+          "start" : 1635442121851,
+          "stop" : 1635442127656,
+          "duration" : 5805
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
       } ],
-      "uid" : "069f9cef56dba31be7714643c0d35fa6"
+      "uid" : "6bb280b4ea5873a0fe9a845886905589"
+    }, {
+      "name" : "13400@LAPTOP-5OB1FN0K.main(1)",
+      "children" : [ {
+        "name" : "innerPageDifferentElementsTest",
+        "uid" : "7387b9ed0c517f6a",
+        "parentUid" : "c6b2e279b519eefb401ef023eb705538",
+        "status" : "passed",
+        "time" : {
+          "start" : 1635442466635,
+          "stop" : 1635442471918,
+          "duration" : 5283
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      }, {
+        "name" : "startPageJdiTest",
+        "uid" : "741c4b5aeb479a91",
+        "parentUid" : "c6b2e279b519eefb401ef023eb705538",
+        "status" : "failed",
+        "time" : {
+          "start" : 1635442478088,
+          "stop" : 1635442483467,
+          "duration" : 5379
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      }, {
+        "name" : "startPageJdiTest",
+        "uid" : "2f5c66229b681255",
+        "parentUid" : "c6b2e279b519eefb401ef023eb705538",
+        "status" : "passed",
+        "time" : {
+          "start" : 1635442455441,
+          "stop" : 1635442460352,
+          "duration" : 4911
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      } ],
+      "uid" : "c6b2e279b519eefb401ef023eb705538"
+    }, {
+      "name" : "11664@LAPTOP-5OB1FN0K.main(1)",
+      "children" : [ {
+        "name" : "innerPageDifferentElementsTest",
+        "uid" : "81cc7de324a322ef",
+        "parentUid" : "8a94df954740380c3d23b46d884a1a30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1635443326238,
+          "stop" : 1635443331400,
+          "duration" : 5162
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      }, {
+        "name" : "startPageJdiTest",
+        "uid" : "3a1443f63c544d91",
+        "parentUid" : "8a94df954740380c3d23b46d884a1a30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1635443309630,
+          "stop" : 1635443319945,
+          "duration" : 10315
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      }, {
+        "name" : "startPageJdiTest",
+        "uid" : "78522f159e94f66",
+        "parentUid" : "8a94df954740380c3d23b46d884a1a30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1635443336018,
+          "stop" : 1635443339936,
+          "duration" : 3918
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      } ],
+      "uid" : "8a94df954740380c3d23b46d884a1a30"
+    }, {
+      "name" : "6524@LAPTOP-5OB1FN0K.main(1)",
+      "children" : [ {
+        "name" : "startPageJdiTest",
+        "uid" : "f32f73d4e7c405e3",
+        "parentUid" : "963625a3220352a0ee915dbdfcf888df",
+        "status" : "failed",
+        "time" : {
+          "start" : 1635443154013,
+          "stop" : 1635443159454,
+          "duration" : 5441
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      } ],
+      "uid" : "963625a3220352a0ee915dbdfcf888df"
+    }, {
+      "name" : "10228@LAPTOP-5OB1FN0K.main(1)",
+      "children" : [ {
+        "name" : "startPageJdiTest",
+        "uid" : "98f2225c946a1949",
+        "parentUid" : "74c4a701a7735acf91717f1988b1ee47",
+        "status" : "passed",
+        "time" : {
+          "start" : 1635443246597,
+          "stop" : 1635443252403,
+          "duration" : 5806
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "Roman", "Jdi1234", "ROMAN IOVLEV" ]
+      } ],
+      "uid" : "74c4a701a7735acf91717f1988b1ee47"
     } ],
     "uid" : "7133b9c592499af84127630793eea6ce"
   } ]

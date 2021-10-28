@@ -3,7 +3,7 @@
 
     <test name="Inner Page Test">
         <classes>
-            <class name="com.epam.tc.hw4.exercise2.PageDifferentElementsTest"/>
+            <class name="com.epam.tc.hw4.inner.PageDifferentElementsTest"/>
         </classes>
     </test>
 

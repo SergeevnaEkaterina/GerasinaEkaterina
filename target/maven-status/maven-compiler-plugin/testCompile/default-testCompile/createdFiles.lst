@@ -1,7 +1,7 @@
 com\epam\tc\hw2\exercise2\PageDifferentElementsTest.class
-com\epam\tc\hw4\exercise2\PageDifferentElementsTest.class
 com\epam\tc\hw1\basics\DivideDataProvider.class
 com\epam\tc\hw1\trigonometry\SinDataProvider.class
+com\epam\tc\hw4\listener\ListenerScreenshot.class
 com\epam\tc\hw1\compound\CalculatorSqrtTest.class
 com\epam\tc\hw3\pages\Iframe.class
 com\epam\tc\hw4\data\Values.class
@@ -14,6 +14,7 @@ com\epam\tc\hw4\data\PropertyInitialization.class
 com\epam\tc\hw2\exercise1\StartPageTest.class
 com\epam\tc\hw1\compound\PowerDataProvider.class
 com\epam\tc\hw1\sign\SignDataProvider.class
+com\epam\tc\hw4\inner\PageDifferentElementsTest.class
 com\epam\tc\hw3\data\Values.class
 com\epam\tc\hw4\pages\LoginPage.class
 com\epam\tc\hw1\basics\CalculatorDivideTest.class
@@ -30,7 +31,9 @@ com\epam\tc\hw4\pages\Iframe.class
 com\epam\tc\hw4\data\LoginDataProvider.class
 com\epam\tc\hw1\compound\SquareRootDataProvider.class
 com\epam\tc\hw3\pages\AbstractPage.class
+com\epam\tc\hw4\broken\StartPageBrokenTest.class
 com\epam\tc\hw1\basics\CalculatorMultiplyTest.class
+com\epam\tc\hw4\start\StartPageTest.class
 com\epam\tc\hw1\basics\SumDataProvider.class
 com\epam\tc\hw3\pages\DifferentElementsPage.class
 com\epam\tc\hw1\basics\CalculatorSubtractTest.class
@@ -39,7 +42,6 @@ com\epam\tc\hw2\data\LocatorsIndexPage.class
 com\epam\tc\hw3\pages\IndexPage.class
 com\epam\tc\hw4\pages\IndexPage.class
 com\epam\tc\hw1\basics\CalculatorSumTest.class
-com\epam\tc\hw4\exercise1\StartPageTest.class
 com\epam\tc\hw1\compound\CalculatorPowTest.class
 com\epam\tc\hw4\pages\DifferentElementsPage.class
 com\epam\tc\hw4\SiteBaseTest.class

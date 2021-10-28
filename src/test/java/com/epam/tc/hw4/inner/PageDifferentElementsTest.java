@@ -1,18 +1,21 @@
-package com.epam.tc.hw4.exercise2;
+package com.epam.tc.hw4.inner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.epam.tc.hw4.SiteBaseTest;
 import com.epam.tc.hw4.data.LoginDataProvider;
 import com.epam.tc.hw4.data.Values;
+import com.epam.tc.hw4.listener.ListenerScreenshot;
 import com.epam.tc.hw4.pages.DifferentElementsPage;
 import com.epam.tc.hw4.pages.LoginPage;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Feature("Inner page \"Different elements\" functionality")
 @Story("Selecting checkboxes, ratio, dropdown")
+@Listeners(ListenerScreenshot.class)
 public class PageDifferentElementsTest extends SiteBaseTest {
 
     @Test(dataProviderClass = LoginDataProvider.class, dataProvider = "userRomanData")

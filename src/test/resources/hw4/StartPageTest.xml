@@ -3,7 +3,7 @@
 
     <test name="Start page Test">
         <classes>
-            <class name="com.epam.tc.hw4.exercise1.StartPageTest"/>
+            <class name="com.epam.tc.hw4.start.StartPageTest"/>
         </classes>
     </test>
 
