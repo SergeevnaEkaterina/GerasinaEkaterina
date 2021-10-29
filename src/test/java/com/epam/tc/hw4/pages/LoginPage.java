@@ -1,6 +1,5 @@
 package com.epam.tc.hw4.pages;
 
-import io.qameta.allure.Step;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.openqa.selenium.WebDriver;
@@ -32,12 +31,12 @@ public class LoginPage extends AbstractPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @Step("Open login page")
+
     public void open(String url) {
         webDriver.navigate().to(url);
     }
 
-    @Step("text {login} : {password}")
+
     public void login(String login, String password) {
         userIcon.click();
         userLogin.sendKeys(login);
@@ -45,21 +44,23 @@ public class LoginPage extends AbstractPage {
         loginButton.click();
     }
 
-    @Step("Open different elements page")
+
     public void openDifferentElements() {
         serviceMenu.click();
         differentElements.click();
     }
 
-    @Step("User")
+
     public String getUserNameText() {
         return userName.getText();
     }
 
-    @Step("Title")
+
     public String getSiteTitle() {
         return webDriver.getTitle();
     }
+
+
 
 
 }

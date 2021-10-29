@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import com.epam.tc.hw4.data.PropertyInitialization;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Step;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +30,7 @@ public class SiteBaseTest {
     }
 
     @AfterMethod(description = "Quit browser")
+    @Step("Close browser")
     public void tearDown() {
         System.out.println("after method");
         webDriver.quit();
