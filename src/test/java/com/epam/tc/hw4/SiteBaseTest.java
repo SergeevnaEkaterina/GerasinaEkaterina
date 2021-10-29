@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -17,13 +18,14 @@ public class SiteBaseTest {
     protected String pageID;
 
     @BeforeMethod(description = "Setup browser and maximize window")
-    public void setUp() {
+    public void setUp(ITestContext testContext) {
         System.out.println("before method");
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts()
                 .implicitlyWait(10, TimeUnit.SECONDS);
+        testContext.setAttribute("driver", webDriver);
     }
 
     @AfterMethod(description = "Quit browser")

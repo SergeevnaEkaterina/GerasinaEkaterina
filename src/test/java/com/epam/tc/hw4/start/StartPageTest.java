@@ -54,3 +54,4 @@ public class StartPageTest extends SiteBaseTest {
         softAssert.assertAll();
     }
 }
+

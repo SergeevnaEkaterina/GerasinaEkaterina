@@ -21,7 +21,7 @@ public class StartPageBrokenTest extends SiteBaseTest {
 
     @Test(dataProviderClass = LoginDataProvider.class, dataProvider = "userRomanData")
     @Description("Test of start page")
-    public void startPageJdiTest(String login, String password, String username) {
+    public void startPageJdiBrokenTest(String login, String password, String username) {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.open(URL);
         softAssert.assertEquals(webDriver.getCurrentUrl(), URL);
@@ -42,8 +42,8 @@ public class StartPageBrokenTest extends SiteBaseTest {
         softAssert.assertEquals(indexPage.getImages().size(), 4);
         // 7. Assert that there are 4 texts on the Index Page under icons and they have proper text
         softAssert.assertEquals(indexPage.getDescription(indexPage.getImages()), Values.DESCRIPTION);
-        // 8. Assert that there is the iframe with “Frame Button” exist
-        softAssert.assertTrue(indexPage.getIframe().getIframe().isDisplayed());
+        // 8. Assert that there is the iframe with “Frame Button” exist BROKEN
+        softAssert.assertFalse(indexPage.getIframe().getIframe().isDisplayed());
         // 9. Switch to the iframe and check that there is “Frame Button” in the iframe
         indexPage.getIframe().switchOn(true);
         softAssert.assertEquals(indexPage.getIframe().getValueOfFrameButton(), Values.FRAME_BUTTON);

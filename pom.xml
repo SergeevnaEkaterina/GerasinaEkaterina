@@ -122,6 +122,14 @@
                 </suite.xml.name>
             </properties>
         </profile>
+        <profile>
+            <id>page-object-jdi-test-suite-with-steps-broken</id>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw4/StartPageBrokenTest.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
