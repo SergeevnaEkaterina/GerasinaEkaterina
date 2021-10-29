@@ -51,15 +51,12 @@ public class StartPageSteps {
         softAssert.assertEquals(indexPage.getImages().size(), 4);
     }
 
-    @Step("Assert 9 images displayed")
-    public void assertBrokenImages() {
-        softAssert.assertEquals(indexPage.getImages().size(), 9);
-    }
 
     @Step("Assert images description")
     public void assertImagesDescription() {
         softAssert.assertEquals(indexPage.getDescription(indexPage.getImages()), Values.DESCRIPTION);
     }
+
 
     @Step("Assert iframe with button exist")
     public void assertIframe() {

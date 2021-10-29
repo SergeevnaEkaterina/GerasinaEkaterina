@@ -33,7 +33,7 @@ public class StartPageBrokenTest extends SiteBaseTest {
         // 5. Assert there are 4 items on the header section are displayed with proper texts
         startPageSteps.headerSection();
         // 6. Assert that there are 4 images on the Index Page and they are displayed
-        startPageSteps.assertBrokenImages();
+        startPageSteps.assertImages();
         // 7. Assert that there are 4 texts on the Index Page under icons and they have proper text
         startPageSteps.assertImagesDescription();
         // 8. Assert that there is the iframe with “Frame Button” exist
