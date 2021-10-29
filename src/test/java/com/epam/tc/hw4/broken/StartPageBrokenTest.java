@@ -3,16 +3,19 @@ package com.epam.tc.hw4.broken;
 import com.epam.tc.hw4.SiteBaseTest;
 import com.epam.tc.hw4.data.LoginDataProvider;
 import com.epam.tc.hw4.data.Values;
+import com.epam.tc.hw4.listener.ListenerScreenshot;
 import com.epam.tc.hw4.pages.IndexPage;
 import com.epam.tc.hw4.pages.LoginPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 @Feature("Start page functionality")
 @Story("Checking items and iframe")
+@Listeners(ListenerScreenshot.class)
 public class StartPageBrokenTest extends SiteBaseTest {
     SoftAssert softAssert = new SoftAssert();
 

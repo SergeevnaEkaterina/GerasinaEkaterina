@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 @Feature("Inner page \"Different elements\" functionality")
 @Story("Selecting checkboxes, ratio, dropdown")
-@Listeners(ListenerScreenshot.class)
+
 public class PageDifferentElementsTest extends SiteBaseTest {
 
     @Test(dataProviderClass = LoginDataProvider.class, dataProvider = "userRomanData")
