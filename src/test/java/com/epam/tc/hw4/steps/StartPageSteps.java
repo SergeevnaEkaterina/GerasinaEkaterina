@@ -51,6 +51,11 @@ public class StartPageSteps {
         softAssert.assertEquals(indexPage.getImages().size(), 4);
     }
 
+    @Step("Assert 9 images displayed")
+    public void assertWrongImages() {
+        softAssert.assertEquals(indexPage.getImages().size(), 9);
+    }
+
 
     @Step("Assert images description")
     public void assertImagesDescription() {
@@ -77,6 +82,10 @@ public class StartPageSteps {
     @Step("Assert 5 items in left section")
     public void assertLeftSection() {
         softAssert.assertEquals(indexPage.getDescription(indexPage.getLeftSideBar()), Values.LEFT_SIDE_BAR);
+    }
+
+    public void assertAllAssertions() {
+        softAssert.assertAll();
     }
 
 }

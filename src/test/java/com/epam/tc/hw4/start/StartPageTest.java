@@ -47,6 +47,7 @@ public class StartPageTest extends SiteBaseTest {
         startPageSteps.assertLeftSection();
         // 12. Close Browser in after method
         softAssert.assertAll();
+        startPageSteps.assertAllAssertions();
     }
 }
 
