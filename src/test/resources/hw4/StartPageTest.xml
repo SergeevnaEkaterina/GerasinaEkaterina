@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Login Credentials Test Suite1">
+<suite name="Login Credentials Test Suite with Void Page Object Allure">
 
     <test name="Start page Test">
         <classes>
-            <class name="com.epam.tc.hw2.exercise1.StartPageTest"/>
+            <class name="com.epam.tc.hw4.tests.StartPageTest"/>
         </classes>
     </test>
 

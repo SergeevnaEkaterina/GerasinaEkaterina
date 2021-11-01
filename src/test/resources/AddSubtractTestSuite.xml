@@ -12,5 +12,4 @@
             <class name="com.epam.tc.hw1.basics.CalculatorSubtractTest"/>
         </classes>
     </test>
-
 </suite>

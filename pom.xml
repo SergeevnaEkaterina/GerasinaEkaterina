@@ -12,11 +12,14 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+        <!--        <testng.configs.path>${project.build.testOutputDirectory}/com/epam/tc/exercise1/</testng.configs.path>-->
+        <!--        <testng.suite.file>${testng.configs.path}/exercise1.class.suite.xml</testng.suite.file>-->
         <checkstyle.version>8.42</checkstyle.version>
         <testng.version>7.4.0</testng.version>
         <assetj.version>3.21.0</assetj.version>
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+        <aspectj.version>1.9.5</aspectj.version>
+        <allure.version>2.14.0</allure.version>
     </properties>
 
     <profiles>
@@ -70,9 +73,6 @@
         </profile>
         <profile>
             <id>all-page-object-jdi-tests</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <suite.xml.name>
                     ${project.basedir}/src/test/resources/hw3/AllTestsJdiTesting.xml
@@ -95,6 +95,41 @@
                 </suite.xml.name>
             </properties>
         </profile>
+        <profile>
+            <id>all-page-object-jdi-tests-with-steps</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw4/AllTestsJdiTesting.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>start-page-object-jdi-test-with-steps</id>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw4/StartPageTest.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>inner-page-object-jdi-test-suite-with-steps</id>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw4/InnerPageTest.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>page-object-jdi-test-suite-with-steps-broken</id>
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/hw4/StartPageBrokenTest.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -103,6 +138,11 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -132,6 +172,12 @@
             <artifactId>lombok</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -175,10 +221,36 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <argLine>
+                        --illegal-access=permit
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                     <suiteXmlFiles>${suite.xml.name}</suiteXmlFiles>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <reportVersion>${allure.version}</reportVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
 
 </project>
