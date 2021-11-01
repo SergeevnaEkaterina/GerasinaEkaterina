@@ -2,7 +2,6 @@ package com.epam.tc.hw4.tests;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.epam.tc.hw4.SiteBaseTest;
 import com.epam.tc.hw4.data.LoginDataProvider;
 import com.epam.tc.hw4.data.Values;
 import com.epam.tc.hw4.listener.ListenerScreenshot;

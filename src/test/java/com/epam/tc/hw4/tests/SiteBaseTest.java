@@ -1,4 +1,4 @@
-package com.epam.tc.hw4;
+package com.epam.tc.hw4.tests;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
