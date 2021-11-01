@@ -36,4 +36,5 @@ public class SiteBaseTest {
         webDriver.quit();
         assertThatThrownBy(webDriver::getTitle).isInstanceOf(NoSuchSessionException.class);
     }
+
 }

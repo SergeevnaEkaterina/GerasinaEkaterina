@@ -12,7 +12,6 @@ public class StartPageSteps {
     protected LoginPage loginPage;
     protected IndexPage indexPage;
 
-
     public StartPageSteps(WebDriver webDriver) {
         loginPage = new LoginPage(webDriver);
         indexPage = new IndexPage(webDriver);
@@ -56,12 +55,10 @@ public class StartPageSteps {
         softAssert.assertEquals(indexPage.getImages().size(), 9);
     }
 
-
     @Step("Assert images description")
     public void assertImagesDescription() {
         softAssert.assertEquals(indexPage.getDescription(indexPage.getImages()), Values.DESCRIPTION);
     }
-
 
     @Step("Assert iframe with button exist")
     public void assertIframe() {

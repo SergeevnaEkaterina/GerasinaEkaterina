@@ -14,7 +14,6 @@ public class SiteInnerPageSteps {
     protected LoginPage loginPage;
     protected DifferentElementsPage differentPage;
 
-
     public SiteInnerPageSteps(WebDriver webDriver) {
         loginPage = new LoginPage(webDriver);
         differentPage = new DifferentElementsPage(webDriver);
@@ -44,7 +43,6 @@ public class SiteInnerPageSteps {
     @Step("Open differentElements page")
     public void openInnerPage() {
         loginPage.openDifferentElements();
-
     }
 
     @Step("Select checkboxes")

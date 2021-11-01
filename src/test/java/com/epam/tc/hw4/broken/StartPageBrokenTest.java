@@ -48,6 +48,5 @@ public class StartPageBrokenTest extends SiteBaseTest {
         // 12. Close Browser in after method
         softAssert.assertAll();
         startPageSteps.assertAllAssertions();
-
     }
 }

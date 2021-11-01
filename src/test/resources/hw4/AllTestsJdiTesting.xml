@@ -3,12 +3,12 @@
 
     <test name="Start page Test">
         <classes>
-            <class name="com.epam.tc.hw4.start.StartPageTest"/>
+            <class name="com.epam.tc.hw4.tests.StartPageTest"/>
         </classes>
     </test>
     <test name="Inner Page Test">
         <classes>
-            <class name="com.epam.tc.hw4.inner.PageDifferentElementsTest"/>
+            <class name="com.epam.tc.hw4.tests.PageDifferentElementsTest"/>
         </classes>
     </test>
     <test name="Broken Inner Page Test">

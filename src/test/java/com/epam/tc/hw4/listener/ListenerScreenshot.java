@@ -20,5 +20,4 @@ public class ListenerScreenshot implements ITestListener {
     private byte[] attachScreenshot(WebDriver driver) {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
-
 }

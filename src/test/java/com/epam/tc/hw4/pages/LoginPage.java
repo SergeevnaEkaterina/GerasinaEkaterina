@@ -25,17 +25,14 @@ public class LoginPage extends AbstractPage {
     @FindBy(linkText = "DIFFERENT ELEMENTS")
     private WebElement differentElements;
 
-
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
 
-
     public void open(String url) {
         webDriver.navigate().to(url);
     }
-
 
     public void login(String login, String password) {
         userIcon.click();
@@ -44,23 +41,17 @@ public class LoginPage extends AbstractPage {
         loginButton.click();
     }
 
-
     public void openDifferentElements() {
         serviceMenu.click();
         differentElements.click();
     }
 
-
     public String getUserNameText() {
         return userName.getText();
     }
 
-
     public String getSiteTitle() {
         return webDriver.getTitle();
     }
-
-
-
 
 }
