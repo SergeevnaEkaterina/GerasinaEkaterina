@@ -57,7 +57,7 @@ public class UserTablePageSteps extends AbstractBaseSteps {
 
     }
 
-    @And("droplist should contain values in column Type for user Roman")
+    @And("Droplist should contain values in column Type for user Roman")
     public void checkRomanDropDownOptions(DataTable dataTable) {
         List<List<String>> listFromFeatureFile = dataTable.asLists(String.class);
         List<List<String>> listWithHeaderSkipped = new ArrayList<>(listFromFeatureFile);
