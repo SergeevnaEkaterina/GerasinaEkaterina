@@ -4,5 +4,8 @@
 log/
 *.iml
 .idea/
+/target
+.allure
+/allure-results
 out/
 
