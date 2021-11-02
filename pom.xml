@@ -20,8 +20,6 @@
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
         <aspectj.version>1.9.5</aspectj.version>
         <allure.version>2.14.0</allure.version>
-        <cucumber-testng.version>7.0.0</cucumber-testng.version>
-        <cucumber-java.version>7.0.0</cucumber-java.version>
     </properties>
 
     <profiles>
@@ -99,6 +97,9 @@
         </profile>
         <profile>
             <id>all-page-object-jdi-tests-with-steps</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <suite.xml.name>
                     ${project.basedir}/src/test/resources/hw4/AllTestsJdiTesting.xml
@@ -126,17 +127,6 @@
             <properties>
                 <suite.xml.name>
                     ${project.basedir}/src/test/resources/hw4/StartPageBrokenTest.xml
-                </suite.xml.name>
-            </properties>
-        </profile>
-        <profile>
-            <id>cucumber-jdi-site-tests</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <suite.xml.name>
-                    ${project.basedir}/src/test/resources/com/epam/tc/hw5/AllCucumberTestSuite.xml
                 </suite.xml.name>
             </properties>
         </profile>
@@ -189,19 +179,6 @@
             <version>1.18.22</version>
             <scope>compile</scope>
         </dependency>
-
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${cucumber-java.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-testng</artifactId>
-            <version>${cucumber-testng.version}</version>
-        </dependency>
-
     </dependencies>
 
     <build>
