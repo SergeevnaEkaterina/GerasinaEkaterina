@@ -54,7 +54,6 @@ public class UserTablePageSteps extends AbstractBaseSteps {
         List<List<String>> listWithHeaderSkipped = new ArrayList<>(listFromFeatureFile);
         listWithHeaderSkipped.remove(0);
         assertThat(userTablePage.getUsersOnPageAsListOfLists()).isEqualTo(listWithHeaderSkipped);
-
     }
 
     @And("Droplist should contain values in column Type for user Roman")

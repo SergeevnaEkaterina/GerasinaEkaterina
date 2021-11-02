@@ -12,7 +12,6 @@ import org.openqa.selenium.support.PageFactory;
 @EqualsAndHashCode(callSuper = false)
 @Data
 public class IndexPage extends AbstractPage {
-
     @FindBy(className = "dropdown-toggle")
     private List<WebElement> serviceDropdown;
     @FindBy(css = ".dropdown-menu > li >a")
