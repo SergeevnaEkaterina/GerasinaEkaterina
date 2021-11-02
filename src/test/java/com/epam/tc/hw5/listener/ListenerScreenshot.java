@@ -13,7 +13,6 @@ public class ListenerScreenshot implements ITestListener {
     public void onTestFailure(ITestResult itestResult) {
         WebDriver driver = (WebDriver) itestResult.getTestContext().getAttribute("driver");
         attachScreenshot(driver);
-        System.out.println("screen");
     }
 
     @Attachment(type = "image/png", fileExtension = ".png")
