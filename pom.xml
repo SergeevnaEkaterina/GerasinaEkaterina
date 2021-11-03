@@ -131,12 +131,21 @@
         </profile>
         <profile>
             <id>cucumber-jdi-site-tests</id>
+
+            <properties>
+                <suite.xml.name>
+                    ${project.basedir}/src/test/resources/com/epam/tc/hw5/AllCucumberTestSuite.xml
+                </suite.xml.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>all-jdi-tests-grid</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <suite.xml.name>
-                    ${project.basedir}/src/test/resources/com/epam/tc/hw5/AllCucumberTestSuite.xml
+                    ${project.basedir}/src/test/resources/hw6/AllTestsJdiTesting.xml
                 </suite.xml.name>
             </properties>
         </profile>
