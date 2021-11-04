@@ -18,8 +18,8 @@ public class DifferentElementsPage extends AbstractPage {
     private List<WebElement> checkBoxes;
     @FindBy(css = ".checkbox-row .label-radio")
     private List<WebElement> radio;
-    @FindBy(css = ".uui-form-element")
-    private List<WebElement> dropdownList;
+    @FindBy(css = ".colors .uui-form-element")
+    private WebElement dropdown;
     @FindBy(css = ".uui-form-element > option")
     private List<WebElement> dropdownElement;
     @FindBy(css = ".info-panel-body-log .panel-body-list > li")
@@ -31,22 +31,25 @@ public class DifferentElementsPage extends AbstractPage {
 
     }
 
-    @Step("Select checkboxes with indexes {index}")
-    public DifferentElementsPage selectCheckBoxes(int index) {
-        checkBoxes.get(index).click();
+    @Step("Select checkbox {name}")
+    public DifferentElementsPage selectCheckBoxes(String name) {
+        checkBoxes.get(getItemByName("checkbox", name)).click();
+        //checkBoxes.get(Values.CHECKBOXES.get(name)).click();
         return this;
     }
 
-    @Step("Select radio with index {index}")
-    public DifferentElementsPage selectRadio(int index) {
-        radio.get(index).click();
+    @Step("Select radio {name}")
+    public DifferentElementsPage selectRadio(String name) {
+        radio.get(getItemByName("radio", name)).click();
+        //radio.get(Values.RADIO_BUTTONS.get(name)).click();
         return this;
     }
 
-    @Step("Select dropdown with index {outerIndex}, {innerIndex}")
-    public DifferentElementsPage selectDropDown(int outerIndex, int innerIndex) {
-        dropdownList.get(outerIndex).click();
-        dropdownElement.get(innerIndex).click();
+    @Step("Select dropdown {name}")
+    public DifferentElementsPage selectDropDown(String name) {
+        dropdown.click();
+        dropdownElement.get(getItemByName("dropdown", name)).click();
+        //dropdownElement.get(Values.DROPDOWNS.get(name)).click();
         return this;
     }
 
@@ -59,18 +62,82 @@ public class DifferentElementsPage extends AbstractPage {
         return this;
     }
 
-    @Step("Is checkbox with index {index} selected")
-    public boolean isCheckBoxSelected(int index) {
-        return getCheckBoxes().get(index).isSelected();
+    @Step("Is checkbox {name} selected")
+    public boolean isCheckBoxSelected(String name) {
+        return checkBoxes.get(getItemByName("checkbox", name)).isSelected();
     }
 
-    @Step("Is radio with index {index} enabled")
-    public boolean isRadioEnabled(int index) {
-        return getRadio().get(index).isEnabled();
+    @Step("Is radio {name} enabled")
+    public boolean isRadioEnabled(String name) {
+        return getRadio().get(getItemByName("radio", name)).isEnabled();
     }
 
-    @Step("Is dropdown with index {index} selected")
-    public boolean isDropDownSelected(int index) {
-        return getDropdownElement().get(index).isSelected();
+    @Step("Is dropdown {name} selected")
+    public boolean isDropDownSelected(String name) {
+        return getDropdownElement().get(getItemByName("dropdown", name)).isSelected();
+    }
+
+    public int getItemByName(String item, String name) {
+        int number;
+        switch (item) {
+            case ("checkbox"):
+                switch (name) {
+                    case ("Water"):
+                        number = 0;
+                        break;
+                    case ("Earth"):
+                        number = 1;
+                        break;
+                    case ("Wind"):
+                        number = 2;
+                        break;
+                    case ("Fire"):
+                        number = 3;
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + name);
+                }
+                break;
+            case ("radio"):
+                switch (name) {
+                    case ("Gold"):
+                        number = 0;
+                        break;
+                    case ("Silver"):
+                        number = 1;
+                        break;
+                    case ("Bronze"):
+                        number = 2;
+                        break;
+                    case ("Selen"):
+                        number = 3;
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + name);
+                }
+                break;
+            case ("dropdown"):
+                switch (name) {
+                    case ("Red"):
+                        number = 0;
+                        break;
+                    case ("Green"):
+                        number = 1;
+                        break;
+                    case ("Blue"):
+                        number = 2;
+                        break;
+                    case ("Yellow"):
+                        number = 3;
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + name);
+                }
+                break;
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + item);
+        }
+        return number;
     }
 }

@@ -2,7 +2,6 @@ package com.epam.tc.hw5.steps;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.epam.tc.hw5.data.Values;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -22,34 +21,28 @@ public class UserTablePageSteps extends AbstractBaseSteps {
         indexPage.clickUserTable();
     }
 
-    @Then("\"User Table\" page should be opened")
-    public void checkTitle() {
-        assertThat(userTablePage.getSiteTitle()).isEqualTo(Values.USER_PAGE_TITLE);
+    @And("{int} Number Type Dropdowns should be displayed on Users Table on User Table Page")
+    public void countDropdowns(int count) {
+        assertThat(userTablePage.countDropDownNumber()).isEqualTo(count);
     }
 
-    @And("6 Number Type Dropdowns should be displayed on Users Table on User Table Page")
-    public void countDropdowns() {
-        assertThat(userTablePage.countDropDownNumber()).isEqualTo(6);
+    @And("{int} Usernames should be displayed on Users Table on User Table Page")
+    public void countUsers(int count) {
+        assertThat(userTablePage.countUsersNumber()).isEqualTo(count);
     }
 
-    @And("6 Usernames should be displayed on Users Table on User Table Page")
-    public void countUsers() {
-        assertThat(userTablePage.countUsersNumber()).isEqualTo(6);
+    @And("{int} Description texts under images should be displayed on Users Table on User Table Page")
+    public void countUserDescriptions(int count) {
+        assertThat(userTablePage.countUserDescriptionNumber()).isEqualTo(count);
     }
 
-    @And("6 Description texts under images should be displayed on Users Table on User Table Page")
-    public void countUserDescriptions() {
-        assertThat(userTablePage.countUserDescriptionNumber()).isEqualTo(6);
-    }
-
-    @And("6 checkboxes should be displayed on Users Table on User Table Page")
-    public void countCheckBoxes() {
-        assertThat(userTablePage.countCheckBoxesNumber()).isEqualTo(6);
+    @And("{int} checkboxes should be displayed on Users Table on User Table Page")
+    public void countCheckBoxes(int count) {
+        assertThat(userTablePage.countCheckBoxesNumber()).isEqualTo(count);
     }
 
     @And("User table should contain following values:")
     public void checkRow(DataTable dataTable) {
-
         List<List<String>> listFromFeatureFile = dataTable.asLists(String.class);
         List<List<String>> listWithHeaderSkipped = new ArrayList<>(listFromFeatureFile);
         listWithHeaderSkipped.remove(0);
@@ -71,9 +64,9 @@ public class UserTablePageSteps extends AbstractBaseSteps {
         userTablePage.selectCheckBoxForSergeyIvan();
     }
 
-    @Then("1 log row has \"Vip: condition changed to true\" text in log section")
-    public void checkLog() {
-        assertThat(userTablePage.logsForVipCheckBox()).isEqualTo(Values.VIP_LOG);
+    @Then("1 log row has {string} text in log section")
+    public void checkLog(String logText) {
+        assertThat(userTablePage.logsForVipCheckBox()).isEqualTo(logText);
     }
 
 }

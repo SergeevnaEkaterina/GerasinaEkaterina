@@ -2,7 +2,7 @@ package com.epam.tc.hw5.steps;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.epam.tc.hw4.data.Values;
+import com.epam.tc.hw5.data.Values;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,42 +13,40 @@ public class DifferentElementsPageSteps extends AbstractBaseSteps {
         loginPage.openDifferentElements();
     }
 
-    @When("I select 'Water' and 'Wind' in checkboxes on Different Element Page")
-    public void selectWaterAndWind() {
-        differentElementsPage.selectCheckBoxes(0)
-                .selectCheckBoxes(2);
+    @When("I select {string} in checkboxes on Different Element Page")
+    public void selectWaterAndWind(String name) {
+        differentElementsPage.selectCheckBoxes(name);
     }
 
-    @And("I select radio 'Selen'")
-    public void selectSelen() {
-        differentElementsPage.selectRadio(3);
+    @And("I select radio {string}")
+    public void selectSelen(String name) {
+        differentElementsPage.selectRadio(name);
     }
 
-    @And("I select 'Yellow' in dropdown")
-    public void selectYellow() {
-        differentElementsPage.selectDropDown(2, 3);
+    @And("I select {string} in dropdown")
+    public void selectYellow(String name) {
+        differentElementsPage.selectDropDown(name);
     }
 
-    @Then("I expect username to be 'ROMAN IOVLEV'")
-    public void checkUser() {
+    @Then("I expect username to be {string}")
+    public void checkUser(String name) {
         assertThat(loginPage.getUserName().isDisplayed()).isTrue();
-        assertThat(loginPage.getUserNameText()).isEqualTo(USERNAME);
+        assertThat(loginPage.getUserNameText()).isEqualTo(name);
     }
 
-    @Then("'Water' and 'Wind' checkboxes are selected")
-    public void checkCheckboxes() {
-        assertThat(differentElementsPage.isCheckBoxSelected(0)
-                && differentElementsPage.isCheckBoxSelected(2)).isTrue();
+    @Then("{string} checkbox is selected")
+    public void checkCheckboxes(String name) {
+        assertThat(differentElementsPage.isCheckBoxSelected(name)).isTrue();
     }
 
-    @Then("'Selen' radio is selected")
-    public void checkRadio() {
-        assertThat(differentElementsPage.isRadioEnabled(3)).isTrue();
+    @Then("{string} radio is selected")
+    public void checkRadio(String name) {
+        assertThat(differentElementsPage.isRadioEnabled(name)).isTrue();
     }
 
-    @Then("'Yellow' is selected in dropdown")
-    public void checkDropdown() {
-        assertThat(differentElementsPage.isDropDownSelected(3)).isTrue();
+    @Then("{string} is selected in dropdown")
+    public void checkDropdown(String name) {
+        assertThat(differentElementsPage.isDropDownSelected(name)).isTrue();
     }
 
     @Then("Log rows are displayed for each selected web elements containing selected items")

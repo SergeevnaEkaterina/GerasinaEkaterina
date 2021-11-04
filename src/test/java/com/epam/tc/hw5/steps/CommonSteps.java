@@ -1,6 +1,9 @@
 package com.epam.tc.hw5.steps;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CommonSteps extends AbstractBaseSteps {
@@ -14,4 +17,8 @@ public class CommonSteps extends AbstractBaseSteps {
         loginPage.login(LOGIN, PASSWORD);
     }
 
+    @Then("{string} page should be opened")
+    public void checkTitle(String title) {
+        assertThat(userTablePage.getSiteTitle()).isEqualTo(title);
+    }
 }
