@@ -1,5 +1,6 @@
 package com.epam.tc.hw5.pages;
 
+import com.epam.tc.hw5.data.Values;
 import io.qameta.allure.Step;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,28 +29,24 @@ public class DifferentElementsPage extends AbstractPage {
     public DifferentElementsPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
-
     }
 
     @Step("Select checkbox {name}")
     public DifferentElementsPage selectCheckBoxes(String name) {
-        checkBoxes.get(getItemByName("checkbox", name)).click();
-        //checkBoxes.get(Values.CHECKBOXES.get(name)).click();
+        checkBoxes.get(Values.CHECKBOXES.get(name)).click();
         return this;
     }
 
     @Step("Select radio {name}")
     public DifferentElementsPage selectRadio(String name) {
-        radio.get(getItemByName("radio", name)).click();
-        //radio.get(Values.RADIO_BUTTONS.get(name)).click();
+        radio.get(Values.RADIO_BUTTONS.get(name)).click();
         return this;
     }
 
     @Step("Select dropdown {name}")
     public DifferentElementsPage selectDropDown(String name) {
         dropdown.click();
-        dropdownElement.get(getItemByName("dropdown", name)).click();
-        //dropdownElement.get(Values.DROPDOWNS.get(name)).click();
+        dropdownElement.get(Values.DROPDOWNS.get(name)).click();
         return this;
     }
 
@@ -64,80 +61,16 @@ public class DifferentElementsPage extends AbstractPage {
 
     @Step("Is checkbox {name} selected")
     public boolean isCheckBoxSelected(String name) {
-        return checkBoxes.get(getItemByName("checkbox", name)).isSelected();
+        return checkBoxes.get(Values.CHECKBOXES.get(name)).isSelected();
     }
 
     @Step("Is radio {name} enabled")
     public boolean isRadioEnabled(String name) {
-        return getRadio().get(getItemByName("radio", name)).isEnabled();
+        return getRadio().get(Values.RADIO_BUTTONS.get(name)).isEnabled();
     }
 
     @Step("Is dropdown {name} selected")
     public boolean isDropDownSelected(String name) {
-        return getDropdownElement().get(getItemByName("dropdown", name)).isSelected();
-    }
-
-    public int getItemByName(String item, String name) {
-        int number;
-        switch (item) {
-            case ("checkbox"):
-                switch (name) {
-                    case ("Water"):
-                        number = 0;
-                        break;
-                    case ("Earth"):
-                        number = 1;
-                        break;
-                    case ("Wind"):
-                        number = 2;
-                        break;
-                    case ("Fire"):
-                        number = 3;
-                        break;
-                    default:
-                        throw new IllegalStateException("Unexpected value: " + name);
-                }
-                break;
-            case ("radio"):
-                switch (name) {
-                    case ("Gold"):
-                        number = 0;
-                        break;
-                    case ("Silver"):
-                        number = 1;
-                        break;
-                    case ("Bronze"):
-                        number = 2;
-                        break;
-                    case ("Selen"):
-                        number = 3;
-                        break;
-                    default:
-                        throw new IllegalStateException("Unexpected value: " + name);
-                }
-                break;
-            case ("dropdown"):
-                switch (name) {
-                    case ("Red"):
-                        number = 0;
-                        break;
-                    case ("Green"):
-                        number = 1;
-                        break;
-                    case ("Blue"):
-                        number = 2;
-                        break;
-                    case ("Yellow"):
-                        number = 3;
-                        break;
-                    default:
-                        throw new IllegalStateException("Unexpected value: " + name);
-                }
-                break;
-
-            default:
-                throw new IllegalStateException("Unexpected value: " + item);
-        }
-        return number;
+        return getDropdownElement().get(Values.DROPDOWNS.get(name)).isSelected();
     }
 }
