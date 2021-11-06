@@ -38,11 +38,6 @@ public class UserTablePage extends AbstractPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @Step("Get site title")
-    public String getSiteTitle() {
-        return webDriver.getTitle();
-    }
-
     @Step("Count dropdowns")
     public int countDropDownNumber() {
         return dropDown.size();

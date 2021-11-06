@@ -1,5 +1,6 @@
 package com.epam.tc.hw5.pages;
 
+import com.epam.tc.hw5.data.Values;
 import io.qameta.allure.Step;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +19,8 @@ public class DifferentElementsPage extends AbstractPage {
     private List<WebElement> checkBoxes;
     @FindBy(css = ".checkbox-row .label-radio")
     private List<WebElement> radio;
-    @FindBy(css = ".uui-form-element")
-    private List<WebElement> dropdownList;
+    @FindBy(css = ".colors .uui-form-element")
+    private WebElement dropdown;
     @FindBy(css = ".uui-form-element > option")
     private List<WebElement> dropdownElement;
     @FindBy(css = ".info-panel-body-log .panel-body-list > li")
@@ -28,25 +29,24 @@ public class DifferentElementsPage extends AbstractPage {
     public DifferentElementsPage(WebDriver webDriver) {
         super(webDriver);
         PageFactory.initElements(webDriver, this);
-
     }
 
-    @Step("Select checkboxes with indexes {index}")
-    public DifferentElementsPage selectCheckBoxes(int index) {
-        checkBoxes.get(index).click();
+    @Step("Select checkbox {name}")
+    public DifferentElementsPage selectCheckBoxes(String name) {
+        checkBoxes.get(Values.CHECKBOXES.get(name)).click();
         return this;
     }
 
-    @Step("Select radio with index {index}")
-    public DifferentElementsPage selectRadio(int index) {
-        radio.get(index).click();
+    @Step("Select radio {name}")
+    public DifferentElementsPage selectRadio(String name) {
+        radio.get(Values.RADIO_BUTTONS.get(name)).click();
         return this;
     }
 
-    @Step("Select dropdown with index {outerIndex}, {innerIndex}")
-    public DifferentElementsPage selectDropDown(int outerIndex, int innerIndex) {
-        dropdownList.get(outerIndex).click();
-        dropdownElement.get(innerIndex).click();
+    @Step("Select dropdown {name}")
+    public DifferentElementsPage selectDropDown(String name) {
+        dropdown.click();
+        dropdownElement.get(Values.DROPDOWNS.get(name)).click();
         return this;
     }
 
@@ -59,18 +59,18 @@ public class DifferentElementsPage extends AbstractPage {
         return this;
     }
 
-    @Step("Is checkbox with index {index} selected")
-    public boolean isCheckBoxSelected(int index) {
-        return getCheckBoxes().get(index).isSelected();
+    @Step("Is checkbox {name} selected")
+    public boolean isCheckBoxSelected(String name) {
+        return checkBoxes.get(Values.CHECKBOXES.get(name)).isSelected();
     }
 
-    @Step("Is radio with index {index} enabled")
-    public boolean isRadioEnabled(int index) {
-        return getRadio().get(index).isEnabled();
+    @Step("Is radio {name} enabled")
+    public boolean isRadioEnabled(String name) {
+        return getRadio().get(Values.RADIO_BUTTONS.get(name)).isEnabled();
     }
 
-    @Step("Is dropdown with index {index} selected")
-    public boolean isDropDownSelected(int index) {
-        return getDropdownElement().get(index).isSelected();
+    @Step("Is dropdown {name} selected")
+    public boolean isDropDownSelected(String name) {
+        return getDropdownElement().get(Values.DROPDOWNS.get(name)).isSelected();
     }
 }

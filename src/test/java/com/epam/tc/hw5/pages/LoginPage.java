@@ -55,9 +55,5 @@ public class LoginPage extends AbstractPage {
         return userName.getText();
     }
 
-    @Step("Get site title")
-    public String getSiteTitle() {
-        return webDriver.getTitle();
-    }
 
 }
