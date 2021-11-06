@@ -2,6 +2,7 @@ package com.epam.tc.hw6.tests;
 
 import com.epam.tc.hw6.data.LoginDataProvider;
 import com.epam.tc.hw6.listener.ListenerScreenshot;
+import com.epam.tc.hw6.model.User;
 import com.epam.tc.hw6.steps.StartPageSteps;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -18,7 +19,7 @@ public class StartPageTest extends SiteBaseTest {
 
     @Test(dataProviderClass = LoginDataProvider.class, dataProvider = "userRomanData")
     @Description("Test of start page")
-    public void startPageJdiTest(String login, String password, String username) {
+    public void startPageJdiTest(User roman) {
         StartPageSteps startPageSteps = new StartPageSteps(webDriver);
         startPageSteps.openByUrl(URL);
         softAssert.assertEquals(webDriver.getCurrentUrl(), URL);
@@ -26,9 +27,9 @@ public class StartPageTest extends SiteBaseTest {
         // 2. Assert Browser title
         startPageSteps.assertTitle();
         // 3. Perform login
-        startPageSteps.performLogin(login, password);
+        startPageSteps.performLogin(roman.getLogin(), roman.getPassword());
         // 4. Assert Username is loggined
-        startPageSteps.assertUserName(username);
+        startPageSteps.assertUserName(roman.getUserName());
         // 5. Assert there are 4 items on the header section are displayed with proper texts
         startPageSteps.headerSection();
         // 6. Assert that there are 4 images on the Index Page and they are displayed

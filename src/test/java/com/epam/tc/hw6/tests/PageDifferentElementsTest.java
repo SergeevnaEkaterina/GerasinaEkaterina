@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import com.epam.tc.hw6.data.LoginDataProvider;
 import com.epam.tc.hw6.data.Values;
 import com.epam.tc.hw6.listener.ListenerScreenshot;
+import com.epam.tc.hw6.model.User;
 import com.epam.tc.hw6.steps.SiteInnerPageSteps;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
@@ -17,7 +18,7 @@ import org.testng.annotations.Test;
 public class PageDifferentElementsTest extends SiteBaseTest {
 
     @Test(dataProviderClass = LoginDataProvider.class, dataProvider = "userRomanData")
-    public void innerPageDifferentElementsTest(String login, String password, String username) {
+    public void innerPageDifferentElementsTest(User roman) {
         SiteInnerPageSteps siteInnerPageSteps = new SiteInnerPageSteps(webDriver);
         siteInnerPageSteps.openByUrl(URL);
         assertThat(webDriver.getCurrentUrl()).isEqualTo(URL);
@@ -25,9 +26,9 @@ public class PageDifferentElementsTest extends SiteBaseTest {
         // 2. Assert Browser title
         siteInnerPageSteps.assertTitle();
         // 3. Perform login
-        siteInnerPageSteps.performLogin(login, password);
+        siteInnerPageSteps.performLogin(roman.getLogin(), roman.getPassword());
         // 4. Assert Username is loggined
-        siteInnerPageSteps.assertUserName(username);
+        siteInnerPageSteps.assertUserName(roman.getUserName());
         // 5. Open through the header menu Service -> Different Elements Page
         siteInnerPageSteps.openInnerPage();
         assertThat(webDriver.getCurrentUrl()).isEqualTo(Values.DIFFERENT_URL);
