@@ -18,7 +18,7 @@ public class ListTests extends BaseTests {
         listSteps = new ListSteps();
         sharedBoardId = boardSteps.createNewBoard(board);
         sharedListId = listSteps.createListInBoard(sharedBoardId, list);
-        List createdList = listSteps.getListFromTrello(sharedListId);
+        List createdList = listSteps.getList(sharedListId);
         assertThat(createdList.getName(), equalTo(list.getName()));
     }
 

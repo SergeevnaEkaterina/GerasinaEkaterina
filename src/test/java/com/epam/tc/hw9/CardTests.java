@@ -21,7 +21,7 @@ public class CardTests extends BaseTests {
         cardSteps = new CardSteps();
         sharedBoardId = boardSteps.createNewBoard(board);
         sharedListId = listSteps.createListInBoard(sharedBoardId, list);
-        sharedCardId = cardSteps.createNewCard(sharedListId, card);
+        sharedCardId = cardSteps.createCardInList(sharedListId, card);
         Card createdCard = cardSteps.getExistingCard(sharedCardId);
         assertThat(createdCard.getName(), equalTo(card.getName()));
     }
@@ -32,7 +32,7 @@ public class CardTests extends BaseTests {
         cardSteps = new CardSteps();
         sharedBoardId = boardSteps.createNewBoard(board);
         sharedListId = listSteps.createListInBoard(sharedBoardId, list);
-        sharedCardId = cardSteps.createNewCard(sharedListId, card);
+        sharedCardId = cardSteps.createCardInList(sharedListId, card);
         cardSteps.getExistingCard(sharedCardId);
         cardSteps.deleteCard(sharedCardId);
         cardSteps.getDeletedCard(sharedCardId);
@@ -44,7 +44,7 @@ public class CardTests extends BaseTests {
         cardSteps = new CardSteps();
         sharedBoardId = boardSteps.createNewBoard(board);
         sharedListId = listSteps.createListInBoard(sharedBoardId, list);
-        sharedCardId = cardSteps.createNewCard(sharedListId, card);
+        sharedCardId = cardSteps.createCardInList(sharedListId, card);
         Card cardToUpdate = cardSteps.modifyCard(sharedCardId);
         assertThat(cardToUpdate.getName(), equalTo(NEW_CARD_NAME));
         assertThat(cardToUpdate.getDesc(), equalTo(NEW_CARD_DESC));

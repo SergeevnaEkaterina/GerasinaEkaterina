@@ -24,7 +24,7 @@ public class ListSteps {
     }
 
     @Step("Get list")
-    public List getListFromTrello(String listId) {
+    public List getList(String listId) {
         ListApiBuilder apiBuilder = listApiBuilder()
                 .setMethod(Method.GET)
                 .setId(listId);

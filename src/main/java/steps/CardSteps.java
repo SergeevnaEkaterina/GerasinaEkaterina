@@ -18,7 +18,7 @@ import io.restassured.specification.ResponseSpecification;
 
 public class CardSteps {
     @Step("Create new card")
-    public String createNewCard(String listId, Card card) {
+    public String createCardInList(String listId, Card card) {
         CardApiBuilder builder = cardApiBuilder()
                 .setMethod(Method.POST)
                 .setName(card.getName())
