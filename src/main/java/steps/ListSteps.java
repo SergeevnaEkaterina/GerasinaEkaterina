@@ -1,31 +1,34 @@
 package steps;
 
-import static constants.PropertyValues.NEW_ACCESS;
-import static constants.PropertyValues.NEW_LIST_NAME;
-import static core.BaseService.okResponseSpecification;
-import static core.ListService.extractListFromJson;
-import static core.ListService.listApiBuilder;
+import static constants.ParametersData.*;
+import static constants.PropertyValues.*;
+import static core.CommonService.*;
+
 
 import beans.List;
-import core.ListService;
+import core.CommonService;
 import io.qameta.allure.Step;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.ResponseSpecification;
 
+import java.net.URI;
+
 public class ListSteps {
+    public static final URI LIST_URL = URI.create(URL_LIST);
+
     @Step("Create new list")
     public String createListInBoard(String boardId, List list) {
-        ListService.ListApiBuilder apiBuilder = listApiBuilder()
+        CommonService.CommonApiBuilder apiBuilder = commonApiBuilder()
                 .setMethod(Method.POST)
-                .setName(list.getName())
-                .setIdBoard(boardId);
+                .setValue(NAME,list.getName())
+                .setValue(ID_BOARD,boardId);
         return sendRequestAndGetResponse(apiBuilder, okResponseSpecification()).getId();
     }
 
     @Step("Get list")
     public List getList(String listId) {
-        ListService.ListApiBuilder apiBuilder = listApiBuilder()
+        CommonService.CommonApiBuilder apiBuilder = commonApiBuilder()
                 .setMethod(Method.GET)
                 .setId(listId);
         return sendRequestAndGetResponse(apiBuilder, okResponseSpecification());
@@ -33,22 +36,22 @@ public class ListSteps {
 
     @Step("Update list")
     public List modifyList(String listId) {
-        ListService.ListApiBuilder builder = listApiBuilder()
+        CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.PUT)
                 .setId(listId);
-        builder.setName(NEW_LIST_NAME);
-        builder.setClosed(NEW_ACCESS);
+        builder.setValue(NAME,NEW_LIST_NAME);
+        builder.setValue(IS_CLOSED,NEW_ACCESS);
         return sendRequestAndGetResponse(builder, okResponseSpecification());
     }
 
-    public List sendRequestAndGetResponse(ListService.ListApiBuilder api, ResponseSpecification resp) {
+    public List sendRequestAndGetResponse(CommonService.CommonApiBuilder api, ResponseSpecification resp) {
         Response response = api
-                .buildListApiRequest()
-                .sendRequest();
+                .buildCommonApiRequest()
+                .sendRequest(LIST_URL);
         response.then()
                 .assertThat()
                 .spec(resp);
-        return extractListFromJson(response);
+        return extractListFromJsonCommon(response);
     }
 }
 

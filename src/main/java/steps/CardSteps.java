@@ -1,42 +1,40 @@
 package steps;
 
-import static constants.PropertyValues.CARD_DESC;
-import static constants.PropertyValues.CARD_NAME;
-import static constants.PropertyValues.NEW_CARD_DESC;
-import static constants.PropertyValues.NEW_CARD_NAME;
-import static core.BaseService.notFoundResponseSpecification;
-import static core.BaseService.okResponseSpecification;
-import static core.CardService.cardApiBuilder;
-import static core.CardService.extractCardFromJson;
+import static constants.ParametersData.*;
+import static constants.PropertyValues.*;
+import static core.CommonService.*;
 
 import beans.Card;
-import core.CardService;
+import core.CommonService;
 import io.qameta.allure.Step;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.ResponseSpecification;
 
+import java.net.URI;
+
 public class CardSteps {
+    public static final URI CARD_URL = URI.create(URL_CARD);
     @Step("Create new card")
     public String createCardInList(String listId, Card card) {
-        CardService.CardApiBuilder builder = cardApiBuilder()
+        CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.POST)
-                .setName(card.getName())
-                .setIdList(listId);
-        return extractCardFromJson(sendRequestAndGetResponse(builder, okResponseSpecification())).getId();
+                .setValue(NAME,card.getName())
+                .setValue(ID_LIST,listId);
+        return extractCardFromJsonCommon(sendRequestAndGetResponse(builder, okResponseSpecification())).getId();
     }
 
     @Step("Get existing card")
     public Card getExistingCard(String cardId) {
-        CardService.CardApiBuilder builder = cardApiBuilder()
+        CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.GET)
                 .setId(cardId);
-        return extractCardFromJson(sendRequestAndGetResponse(builder, okResponseSpecification()));
+        return extractCardFromJsonCommon(sendRequestAndGetResponse(builder, okResponseSpecification()));
     }
 
     @Step("Delete card")
     public void deleteCard(String cardId) {
-        CardService.CardApiBuilder builder = cardApiBuilder()
+        CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.DELETE)
                 .setId(cardId);
         sendRequestAndGetResponse(builder, okResponseSpecification());
@@ -44,7 +42,7 @@ public class CardSteps {
 
     @Step("Get deleted card")
     public Response getDeletedCard(String cardId) {
-        CardService.CardApiBuilder builder = cardApiBuilder()
+        CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.GET)
                 .setId(cardId);
         return sendRequestAndGetResponse(builder, notFoundResponseSpecification());
@@ -52,18 +50,18 @@ public class CardSteps {
 
     @Step("Update card")
     public Card modifyCard(String cardId) {
-        CardService.CardApiBuilder builder = cardApiBuilder()
+        CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.PUT)
                 .setId(cardId);
-        builder.setName(NEW_CARD_NAME);
-        builder.setDesc(NEW_CARD_DESC);
-        return extractCardFromJson(sendRequestAndGetResponse(builder, okResponseSpecification()));
+        builder.setValue(NAME,NEW_CARD_NAME);
+        builder.setValue(DESCRIPTION,NEW_CARD_DESC);
+        return extractCardFromJsonCommon(sendRequestAndGetResponse(builder, okResponseSpecification()));
     }
 
-    public Response sendRequestAndGetResponse(CardService.CardApiBuilder api, ResponseSpecification resp) {
+    public Response sendRequestAndGetResponse(CommonService.CommonApiBuilder api, ResponseSpecification resp) {
         Response response = api
-                .buildCardApiRequest()
-                .sendRequest();
+                .buildCommonApiRequest()
+                .sendRequest(CARD_URL);
         response.then()
                 .assertThat()
                 .spec(resp);
