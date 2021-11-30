@@ -17,27 +17,27 @@ import java.util.stream.Collectors;
 public class MetalsAndColorsForm extends Form<MetalsAndColors> {
     private String deselectOption = "Vegetables";
     @JDropdown(root = "div#colors", value = ".filter-option", list = "li", expand = ".caret")
-    public static Dropdown dropDownForColor;
+    private static Dropdown dropDownForColor;
     @JDropdown(root = "div#metals", value = ".filter-option", list = "li", expand = ".caret")
-    public static Dropdown dropDownForMetals;
+    private static Dropdown dropDownForMetals;
     @JDropdown(root = "#vegetables", value = ".filter-option", list = "li", expand = ".caret")
-    public static Dropdown dropDownForVegetables;
+    private static Dropdown dropDownForVegetables;
     @UI("section.horizontal-group input")
-    public static RadioButtons buttonsInSummary;
+    private static RadioButtons buttonsInSummary;
     @UI("#elements-checklist input")
-    public static Checklist checkBoxes;
+    private static Checklist checkBoxes;
     @UI("button#submit-button")
-    public static Button submit;
+    private static Button submit;
 
-    public void selectElementsAccordingToJson(Dropdown elements, String s) {
+    private void selectElementsAccordingToJson(Dropdown elements, String s) {
         elements.select(s);
     }
 
-    public void selectElementsAccordingToJson(Dropdown elements, List<String> s) {
+    private void selectElementsAccordingToJson(Dropdown elements, List<String> s) {
         s.forEach(elements::select);
     }
 
-    public void selectElementsAccordingToJson(UIListBase<?> elements, List<?> objectList) {
+    private void selectElementsAccordingToJson(UIListBase<?> elements, List<?> objectList) {
         List<String> strings = objectList.stream().map(Functions.toStringFunction()).collect(Collectors.toList());
         strings.forEach(elements::select);
     }
