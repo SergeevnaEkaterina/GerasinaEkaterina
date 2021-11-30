@@ -1,10 +1,16 @@
 package steps;
 
-import static constants.ParametersData.*;
-import static constants.PropertyValues.*;
-
-;
-import static core.CommonService.*;
+import static constants.ParametersData.DESCRIPTION;
+import static constants.ParametersData.IS_CLOSED;
+import static constants.ParametersData.NAME;
+import static constants.PropertyValues.NEW_ACCESS;
+import static constants.PropertyValues.NEW_BOARD_DESCRIPTION;
+import static constants.PropertyValues.NEW_BOARD_NAME;
+import static constants.PropertyValues.URL_BOARD;
+import static core.CommonService.commonApiBuilder;
+import static core.CommonService.extractBoardFromJsonCommon;
+import static core.CommonService.notFoundResponseSpecification;
+import static core.CommonService.okResponseSpecification;
 
 import beans.Board;
 import core.CommonService;
@@ -12,7 +18,6 @@ import io.qameta.allure.Step;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.ResponseSpecification;
-
 import java.net.URI;
 
 public class BoardSteps {
@@ -22,9 +27,8 @@ public class BoardSteps {
     public String createNewBoard(Board board) {
         CommonService.CommonApiBuilder api = commonApiBuilder()
                 .setMethod(Method.POST)
-                .setValue(NAME,board.getName());
+                .setValue(NAME, board.getName());
         return extractBoardFromJsonCommon(sendRequestAndGetResponse(api, okResponseSpecification())).getId();
-
     }
 
     @Step("Get board")
@@ -33,7 +37,6 @@ public class BoardSteps {
                 .setMethod(Method.GET)
                 .setId(boardId);
         return extractBoardFromJsonCommon(sendRequestAndGetResponse(api, okResponseSpecification()));
-
     }
 
     @Step("Delete board")
@@ -67,9 +70,9 @@ public class BoardSteps {
         CommonService.CommonApiBuilder api = commonApiBuilder()
                 .setMethod(Method.PUT)
                 .setId(boardId);
-        api.setValue(NAME,NEW_BOARD_NAME);
-        api.setValue(DESCRIPTION,NEW_BOARD_DESCRIPTION);
-        api.setValue(IS_CLOSED,NEW_ACCESS);
+        api.setValue(NAME, NEW_BOARD_NAME);
+        api.setValue(DESCRIPTION, NEW_BOARD_DESCRIPTION);
+        api.setValue(IS_CLOSED, NEW_ACCESS);
         return extractBoardFromJsonCommon(sendRequestAndGetResponse(api, okResponseSpecification()));
     }
 }

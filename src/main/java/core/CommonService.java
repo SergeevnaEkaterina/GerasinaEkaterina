@@ -1,5 +1,12 @@
 package core;
 
+import static constants.ParametersData.ID;
+import static constants.ParametersData.KEY;
+import static constants.ParametersData.TOKEN;
+import static constants.PropertyValues.USER_KEY;
+import static constants.PropertyValues.USER_TOKEN;
+import static org.hamcrest.Matchers.lessThan;
+
 import beans.Board;
 import beans.Card;
 import beans.List;
@@ -13,20 +20,12 @@ import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import org.apache.http.HttpStatus;
-
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
+import org.apache.http.HttpStatus;
 
-import static constants.ParametersData.*;
-import static constants.ParametersData.DESCRIPTION;
-import static constants.PropertyValues.USER_KEY;
-import static constants.PropertyValues.USER_TOKEN;
-import static org.hamcrest.Matchers.lessThan;
-
-
-public class CommonService{
+public class CommonService {
     protected Method requestedMethod;
     protected Map<String, String> queryParameters;
     protected Map<String, String> pathParameters;
@@ -101,7 +100,7 @@ public class CommonService{
     }
 
     public CommonService(Method requestedMethod, Map<String, String> queryParameters,
-                       Map<String, String> pathParameters) {
+                         Map<String, String> pathParameters) {
         this.requestedMethod = requestedMethod;
         this.queryParameters = queryParameters;
         this.pathParameters = pathParameters;
