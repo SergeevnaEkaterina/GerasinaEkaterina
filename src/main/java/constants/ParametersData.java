@@ -9,4 +9,6 @@ public class ParametersData {
     public static final String IS_CLOSED = "closed";
     public static final String ID_BOARD = "idBoard";
     public static final String ID_LIST = "idList";
+    public static final int NOT_FOUND_STATUS = 404;
+    public static final String NOT_FOUND_MESSAGE = "Not found";
 }
