@@ -21,6 +21,9 @@
         <cucumber-testng.version>7.0.0</cucumber-testng.version>
         <cucumber-java.version>7.0.0</cucumber-java.version>
         <jdi-light-html.version>1.3.13</jdi-light-html.version>
+        <rest-assured.version>4.3.3</rest-assured.version>
+        <hamcrest.version>2.2</hamcrest.version>
+        <gson.version>2.8.6</gson.version>
     </properties>
 
     <profiles>
@@ -162,18 +165,34 @@
         </profile>
         <profile>
             <id>hw7-jdi-test</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <suite.xml.name>
                     ${project.basedir}/src/test/resources/hw7/JdiTest.xml
                 </suite.xml.name>
             </properties>
         </profile>
+        <profile>
+            <id>allTests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml.name>${project.basedir}/src/test/resources/hw9/TestSuite.xml</suite.xml.name>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>${hamcrest.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -237,6 +256,17 @@
             <groupId>com.epam.jdi</groupId>
             <artifactId>jdi-light-html</artifactId>
             <version>${jdi-light-html.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.4.0</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
