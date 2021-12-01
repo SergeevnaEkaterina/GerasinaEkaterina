@@ -11,13 +11,13 @@ import static core.CommonService.commonApiBuilder;
 import static core.CommonService.extractCardFromJsonCommon;
 import static core.CommonService.notFoundResponseSpecification;
 import static core.CommonService.okResponseSpecification;
+import static core.CommonService.sendRequestAndGetResponse;
 
 import beans.Card;
 import core.CommonService;
 import io.qameta.allure.Step;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
-import io.restassured.specification.ResponseSpecification;
 import java.net.URI;
 
 public class CardSteps {
@@ -27,10 +27,11 @@ public class CardSteps {
     public String createCardInList(String listId, Card card) {
         CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.POST)
-                .setValue(NAME, card.getName())
-                .setValue(DESCRIPTION, CARD_DESC)
-                .setValue(ID_LIST, listId);
-        return extractCardFromJsonCommon(sendRequestAndGetResponse(builder, okResponseSpecification())).getId();
+                .setQueryParameter(NAME, card.getName())
+                .setQueryParameter(DESCRIPTION, CARD_DESC)
+                .setQueryParameter(ID_LIST, listId);
+        return extractCardFromJsonCommon(sendRequestAndGetResponse(builder,
+                okResponseSpecification(), CARD_URL)).getId();
     }
 
     @Step("Get existing card")
@@ -38,7 +39,7 @@ public class CardSteps {
         CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.GET)
                 .setId(cardId);
-        return extractCardFromJsonCommon(sendRequestAndGetResponse(builder, okResponseSpecification()));
+        return extractCardFromJsonCommon(sendRequestAndGetResponse(builder, okResponseSpecification(), CARD_URL));
     }
 
     @Step("Delete card")
@@ -46,7 +47,7 @@ public class CardSteps {
         CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.DELETE)
                 .setId(cardId);
-        sendRequestAndGetResponse(builder, okResponseSpecification());
+        sendRequestAndGetResponse(builder, okResponseSpecification(), CARD_URL);
     }
 
     @Step("Get deleted card")
@@ -54,7 +55,7 @@ public class CardSteps {
         CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.GET)
                 .setId(cardId);
-        return sendRequestAndGetResponse(builder, notFoundResponseSpecification());
+        return sendRequestAndGetResponse(builder, notFoundResponseSpecification(), CARD_URL);
     }
 
     @Step("Update card")
@@ -62,18 +63,8 @@ public class CardSteps {
         CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.PUT)
                 .setId(cardId);
-        builder.setValue(NAME, NEW_CARD_NAME);
-        builder.setValue(DESCRIPTION, NEW_CARD_DESC);
-        return extractCardFromJsonCommon(sendRequestAndGetResponse(builder, okResponseSpecification()));
-    }
-
-    public Response sendRequestAndGetResponse(CommonService.CommonApiBuilder api, ResponseSpecification resp) {
-        Response response = api
-                .buildCommonApiRequest()
-                .sendRequest(CARD_URL);
-        response.then()
-                .assertThat()
-                .spec(resp);
-        return response;
+        builder.setQueryParameter(NAME, NEW_CARD_NAME);
+        builder.setQueryParameter(DESCRIPTION, NEW_CARD_DESC);
+        return extractCardFromJsonCommon(sendRequestAndGetResponse(builder, okResponseSpecification(), CARD_URL));
     }
 }

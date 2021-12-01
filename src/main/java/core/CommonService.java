@@ -49,7 +49,7 @@ public class CommonService {
             return this;
         }
 
-        public CommonApiBuilder setValue(String parameter, String value) {
+        public CommonApiBuilder setQueryParameter(String parameter, String value) {
             queryParameters.put(parameter, value);
             return this;
         }
@@ -119,5 +119,16 @@ public class CommonService {
     public static List extractListFromJsonCommon(Response response) {
         return new Gson().fromJson(response.asString().trim(), new TypeToken<List>() {
         }.getType());
+    }
+
+    public static Response sendRequestAndGetResponse(CommonService.CommonApiBuilder api,
+                                                     ResponseSpecification resp, URI url) {
+        Response response = api
+                .buildCommonApiRequest()
+                .sendRequest(url);
+        response.then()
+                .assertThat()
+                .spec(resp);
+        return response;
     }
 }

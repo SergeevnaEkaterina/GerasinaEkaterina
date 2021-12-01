@@ -9,13 +9,12 @@ import static constants.PropertyValues.URL_LIST;
 import static core.CommonService.commonApiBuilder;
 import static core.CommonService.extractListFromJsonCommon;
 import static core.CommonService.okResponseSpecification;
+import static core.CommonService.sendRequestAndGetResponse;
 
 import beans.List;
 import core.CommonService;
 import io.qameta.allure.Step;
 import io.restassured.http.Method;
-import io.restassured.response.Response;
-import io.restassured.specification.ResponseSpecification;
 import java.net.URI;
 
 public class ListSteps {
@@ -25,9 +24,10 @@ public class ListSteps {
     public String createListInBoard(String boardId, List list) {
         CommonService.CommonApiBuilder apiBuilder = commonApiBuilder()
                 .setMethod(Method.POST)
-                .setValue(NAME, list.getName())
-                .setValue(ID_BOARD, boardId);
-        return sendRequestAndGetResponse(apiBuilder, okResponseSpecification()).getId();
+                .setQueryParameter(NAME, list.getName())
+                .setQueryParameter(ID_BOARD, boardId);
+        return extractListFromJsonCommon(sendRequestAndGetResponse(apiBuilder,
+                okResponseSpecification(), LIST_URL)).getId();
     }
 
     @Step("Get list")
@@ -35,7 +35,7 @@ public class ListSteps {
         CommonService.CommonApiBuilder apiBuilder = commonApiBuilder()
                 .setMethod(Method.GET)
                 .setId(listId);
-        return sendRequestAndGetResponse(apiBuilder, okResponseSpecification());
+        return extractListFromJsonCommon(sendRequestAndGetResponse(apiBuilder, okResponseSpecification(), LIST_URL));
     }
 
     @Step("Update list")
@@ -43,19 +43,9 @@ public class ListSteps {
         CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.PUT)
                 .setId(listId);
-        builder.setValue(NAME, NEW_LIST_NAME);
-        builder.setValue(IS_CLOSED, NEW_ACCESS);
-        return sendRequestAndGetResponse(builder, okResponseSpecification());
-    }
-
-    public List sendRequestAndGetResponse(CommonService.CommonApiBuilder api, ResponseSpecification resp) {
-        Response response = api
-                .buildCommonApiRequest()
-                .sendRequest(LIST_URL);
-        response.then()
-                .assertThat()
-                .spec(resp);
-        return extractListFromJsonCommon(response);
+        builder.setQueryParameter(NAME, NEW_LIST_NAME);
+        builder.setQueryParameter(IS_CLOSED, NEW_ACCESS);
+        return extractListFromJsonCommon(sendRequestAndGetResponse(builder, okResponseSpecification(), LIST_URL));
     }
 }
 

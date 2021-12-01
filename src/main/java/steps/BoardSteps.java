@@ -11,13 +11,13 @@ import static core.CommonService.commonApiBuilder;
 import static core.CommonService.extractBoardFromJsonCommon;
 import static core.CommonService.notFoundResponseSpecification;
 import static core.CommonService.okResponseSpecification;
+import static core.CommonService.sendRequestAndGetResponse;
 
 import beans.Board;
 import core.CommonService;
 import io.qameta.allure.Step;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
-import io.restassured.specification.ResponseSpecification;
 import java.net.URI;
 
 public class BoardSteps {
@@ -27,8 +27,8 @@ public class BoardSteps {
     public String createNewBoard(Board board) {
         CommonService.CommonApiBuilder api = commonApiBuilder()
                 .setMethod(Method.POST)
-                .setValue(NAME, board.getName());
-        return extractBoardFromJsonCommon(sendRequestAndGetResponse(api, okResponseSpecification())).getId();
+                .setQueryParameter(NAME, board.getName());
+        return extractBoardFromJsonCommon(sendRequestAndGetResponse(api, okResponseSpecification(), BOARD_URL)).getId();
     }
 
     @Step("Get board")
@@ -36,7 +36,7 @@ public class BoardSteps {
         CommonService.CommonApiBuilder api = commonApiBuilder()
                 .setMethod(Method.GET)
                 .setId(boardId);
-        return extractBoardFromJsonCommon(sendRequestAndGetResponse(api, okResponseSpecification()));
+        return extractBoardFromJsonCommon(sendRequestAndGetResponse(api, okResponseSpecification(), BOARD_URL));
     }
 
     @Step("Delete board")
@@ -44,17 +44,7 @@ public class BoardSteps {
         CommonService.CommonApiBuilder api = commonApiBuilder()
                 .setMethod(Method.DELETE)
                 .setId(boardId);
-        sendRequestAndGetResponse(api, okResponseSpecification());
-    }
-
-    public Response sendRequestAndGetResponse(CommonService.CommonApiBuilder api, ResponseSpecification resp) {
-        Response response = api
-                .buildCommonApiRequest()
-                .sendRequest(BOARD_URL);
-        response.then()
-                .assertThat()
-                .spec(resp);
-        return response;
+        sendRequestAndGetResponse(api, okResponseSpecification(), BOARD_URL);
     }
 
     @Step("Get deleted board")
@@ -62,7 +52,7 @@ public class BoardSteps {
         CommonService.CommonApiBuilder builder = commonApiBuilder()
                 .setMethod(Method.GET)
                 .setId(boardId);
-        return sendRequestAndGetResponse(builder, notFoundResponseSpecification());
+        return sendRequestAndGetResponse(builder, notFoundResponseSpecification(), BOARD_URL);
     }
 
     @Step("Update board")
@@ -70,9 +60,9 @@ public class BoardSteps {
         CommonService.CommonApiBuilder api = commonApiBuilder()
                 .setMethod(Method.PUT)
                 .setId(boardId);
-        api.setValue(NAME, NEW_BOARD_NAME);
-        api.setValue(DESCRIPTION, NEW_BOARD_DESCRIPTION);
-        api.setValue(IS_CLOSED, NEW_ACCESS);
-        return extractBoardFromJsonCommon(sendRequestAndGetResponse(api, okResponseSpecification()));
+        api.setQueryParameter(NAME, NEW_BOARD_NAME);
+        api.setQueryParameter(DESCRIPTION, NEW_BOARD_DESCRIPTION);
+        api.setQueryParameter(IS_CLOSED, NEW_ACCESS);
+        return extractBoardFromJsonCommon(sendRequestAndGetResponse(api, okResponseSpecification(), BOARD_URL));
     }
 }
